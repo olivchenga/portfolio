@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="custom-cursor" aria-hidden="true"></div>
+    <main class="portfolio">
+      <div class="portfolio__container">
+        <aside class="profile">
+          <div>
+            <img class="profile__avatar" src="./assets/avatar/avatar@1x.png" srcset="./assets/avatar/avatar@2x.png 2x, ./assets/avatar/avatar@3x.png 3x" alt="аватар Оли Ивченко"/>
+            <h1 class="profile__name">оля ивченко</h1>
+            <p class="profile__about">Привет! Я дизайнер, который проектирует<br>изапускает b2c сервисы&nbsp;для&nbsp;миллионов пользователей. Здесь рассказываю как</p>
+          </div>
+
+          <nav class="menu" aria-label="Навигация">
+            <a class="menu__button menu__button--primary" href="#projects" data-scroll-target="projects">проекты</a>
+            <a class="menu__button menu__button--primary" href="#contacts" data-scroll-target="contacts">контакты</a>
+            <a class="menu__button menu__button--primary" href="./assets/resume/CV Ивченко Ольга.pdf" download>резюме <p class="menu__arrow">&gt;</p></a>
+          </nav>
+        </aside>
+
+        <section class="content" aria-label="Проекты">
+          <div class="projects" id="projects">
+            <div class="projects__col">
+              <article class="card">
+                <picture class="card__media">
+                  <img class="card__image" src="./assets/cards/card-1@1x.png" srcset="./assets/cards/card-1@2x.png 2x, ./assets/cards/card-1@3x.png 3x" alt="Интеграция сервиса кешбэка в почту" loading="lazy" />
+                </picture>
+                <div class="card__meta">2025 / mobile / web</div>
+                <h2 class="card__title">интеграция сервиса кешбэка в почту</h2>
+              </article>
+
+              <article class="card">
+                <picture class="card__media">
+                  <img class="card__image" src="./assets/cards/card-2@1x.png" srcset="./assets/cards/card-2@2x.png 2x, ./assets/cards/card-2@3x.png 3x" alt="Интеграция автозагрузки файлов в почту" loading="lazy" />
+                </picture>
+                <div class="card__meta">2024 / mobile</div>
+                <h2 class="card__title">интеграция автозагрузки файлов в почту</h2>
+              </article>
+
+              <article class="card">
+                <picture class="card__media">
+                  <img class="card__image" src="./assets/cards/card-3@1x.png" srcset="./assets/cards/card-3@2x.png 2x, ./assets/cards/card-3@3x.png 3x" alt="Спецпроект с кешбэком за чеки в почте" loading="lazy" />
+                </picture>
+                <div class="card__meta">2025 / mobile</div>
+                <h2 class="card__title">спецпроект с кешбэком за чеки в почте</h2>
+              </article>
+            </div>
+
+            <div class="projects__col">
+              <article class="card card--tall">
+                <picture class="card__media card__media--tall">
+                  <img class="card__image card__image--tall" src="./assets/cards/card-4@1x.png" srcset="./assets/cards/card-4@2x.png 2x, ./assets/cards/card-4@3x.png 3x" alt="Редизайн раздела развлечения в почте" loading="lazy" />
+                </picture>
+                <div class="card__meta">2026 / mobile</div>
+                <h2 class="card__title">редизайн раздела развлечения в почте</h2>
+              </article>
+
+              <article class="card">
+                <picture class="card__media">
+                  <img class="card__image" src="./assets/cards/card-5@1x.png" srcset="./assets/cards/card-5@2x.png 2x, ./assets/cards/card-5@3x.png 3x" alt="Очистка места на телефоне" loading="lazy" />
+                </picture>
+                <div class="card__meta">2024 / mobile</div>
+                <h2 class="card__title">очистка места на телефоне</h2>
+              </article>
+            </div>
+          </div>
+
+          <section class="playground" aria-label="UI Playground">
+            <picture class="playground__layer playground__layer--bg">
+              <img class="playground__img" src="./assets/playground/playground-bg@1x.png" srcset="./assets/playground/playground-bg@2x.png 2x, ./assets/playground/playground-bg@3x.png 3x" alt="" loading="lazy" />
+            </picture>
+            <picture class="playground__layer playground__layer--fg">
+              <img class="playground__img" src="./assets/playground/playground-fg@1x.png" srcset="./assets/playground/playground-fg@2x.png 2x, ./assets/playground/playground-fg@3x.png 3x" alt="" loading="lazy" />
+            </picture>
+            <div class="playground__blur">
+              <span class="playground__tag">UI playground</span>
+              <button class="playground__button" type="button" aria-label="Открыть UI playground">&gt;</button>
+            </div>
+          </section>
+
+          <footer class="footer" id="contacts">
+            <p class="footer__text">открыта к новым проектам :)))</p>
+            <div class="footer__contacts">
+              <a class="menu__button menu__button--secondary" href="mailto:olivchenga@gmail.com" target="_blank" rel="noopener noreferrer">olivchenga@gmail.com</a>
+              <a class="menu__button menu__button--secondary" href="https://t.me/olya_sick" target="_blank" rel="noopener noreferrer">telegram</a>
+              <a class="menu__button menu__button--secondary" href="#" target="_blank" rel="noopener noreferrer">vk</a>
+            </div>
+          </footer>
+        </section>
+      </div>
+
+      <div class="portfolio__slashes" aria-hidden="true">///<br>///</div>
+    </main>
+    <script>
+      const customCursor = document.querySelector(".custom-cursor");
+      const cursorState = {
+        currentX: window.innerWidth / 2,
+        currentY: window.innerHeight / 2,
+        targetX: window.innerWidth / 2,
+        targetY: window.innerHeight / 2,
+        visible: false,
+      };
+      let cursorAnimationFrame = null;
+
+      const animateCursor = () => {
+        if (!customCursor) {
+          cursorAnimationFrame = null;
+          return;
+        }
+
+        cursorState.currentX += (cursorState.targetX - cursorState.currentX) * 0.18;
+        cursorState.currentY += (cursorState.targetY - cursorState.currentY) * 0.18;
+
+        customCursor.style.transform = `translate(${cursorState.currentX}px, ${cursorState.currentY}px)`;
+        cursorAnimationFrame = window.requestAnimationFrame(animateCursor);
+      };
+
+      window.addEventListener("mousemove", (event) => {
+        cursorState.targetX = event.clientX;
+        cursorState.targetY = event.clientY;
+
+        if (!cursorState.visible && customCursor) {
+          customCursor.classList.add("custom-cursor--visible");
+          cursorState.visible = true;
+        }
+
+        if (!cursorAnimationFrame) {
+          cursorAnimationFrame = window.requestAnimationFrame(animateCursor);
+        }
+      });
+
+      window.addEventListener("mouseleave", () => {
+        if (!customCursor) {
+          return;
+        }
+
+        customCursor.classList.remove("custom-cursor--visible");
+        cursorState.visible = false;
+      });
+
+      const content = document.querySelector(".content");
+      const navAnchors = document.querySelectorAll("[data-scroll-target]");
+      let smoothTargetScrollTop = 0;
+      let smoothAnimationFrame = null;
+
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+      const runSmoothScroll = () => {
+        if (!content) {
+          smoothAnimationFrame = null;
+          return;
+        }
+
+        const diff = smoothTargetScrollTop - content.scrollTop;
+        if (Math.abs(diff) < 0.5) {
+          content.scrollTop = smoothTargetScrollTop;
+          smoothAnimationFrame = null;
+          return;
+        }
+
+        content.scrollTop += diff * 0.14;
+        smoothAnimationFrame = window.requestAnimationFrame(runSmoothScroll);
+      };
+
+      navAnchors.forEach((anchor) => {
+        anchor.addEventListener("click", (event) => {
+          event.preventDefault();
+          const targetId = anchor.getAttribute("data-scroll-target");
+          const target = document.getElementById(targetId);
+
+          if (!content || !target) {
+            return;
+          }
+
+          const contentTop = content.getBoundingClientRect().top;
+          const targetTop = target.getBoundingClientRect().top;
+          const nextTop = content.scrollTop + (targetTop - contentTop);
+
+          content.scrollTo({ top: nextTop, behavior: "smooth" });
+        });
+      });
+
+      window.addEventListener(
+        "wheel",
+        (event) => {
+          if (!content || window.matchMedia("(max-width: 1280px)").matches) {
+            return;
+          }
+
+          if (event.ctrlKey) {
+            return;
+          }
+
+          const interactiveSelector = "input, textarea, select, [contenteditable='true']";
+          if (event.target instanceof Element && event.target.closest(interactiveSelector)) {
+            return;
+          }
+
+          event.preventDefault();
+          const maxScrollTop = content.scrollHeight - content.clientHeight;
+          smoothTargetScrollTop = clamp(smoothTargetScrollTop + event.deltaY, 0, Math.max(0, maxScrollTop));
+
+          if (!smoothAnimationFrame) {
+            smoothAnimationFrame = window.requestAnimationFrame(runSmoothScroll);
+          }
+        },
+        { passive: false }
+      );
+
+      if (content) {
+        smoothTargetScrollTop = content.scrollTop;
+      }
+    </script>
+  </body>
+</html>
