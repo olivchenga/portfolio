@@ -31,6 +31,7 @@ body {
   color: var(--color-text-primary);
   font-family: var(--font-main);
   overflow: hidden;
+  min-width: 0;
 }
 
 .portfolio {
@@ -39,7 +40,9 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  overflow-x: clip;
   isolation: isolate;
+  max-width: 100%;
 }
 
 .portfolio::before {
@@ -55,10 +58,12 @@ body {
 
 .portfolio__container {
   width: min(1440px, 100%);
+  max-width: 100%;
+  min-width: 0;
   min-height: 100vh;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: 1fr 2.05fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.05fr);
   gap: 20px;
   position: relative;
   z-index: 2;
@@ -66,6 +71,8 @@ body {
 
 .profile {
   height: 100vh;
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -118,7 +125,8 @@ body {
 }
 
 .profile__about {
-  width: min(339px, 100%);
+  width: 100%;
+  max-width: 320px;
   margin: 0;
   font-size: 16px;
   line-height: 20px;
@@ -153,6 +161,8 @@ body {
 .content {
   max-height: 100vh;
   min-height: 0;
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -166,6 +176,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .projects__col {
@@ -334,6 +346,9 @@ body {
   position: relative;
   box-sizing: border-box;
   height: 84px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   background: var(--color-dark);
   color: var(--color-text-contrast);
   border-radius: var(--radius-card);
@@ -347,17 +362,24 @@ body {
 }
 
 .footer__text {
-  height: 30px;
   margin: 0;
+  min-width: 0;
   display: flex;
   align-items: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0;
   font-size: 24px;
   line-height: 28px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  white-space: nowrap;
+}
+
+@media (min-width: 1121px) {
+  .footer__text {
+    height: 30px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
 }
 
 .footer__highlight {
@@ -384,6 +406,8 @@ body {
   align-items: center;
   gap: 0;
   flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .menu {
@@ -391,6 +415,8 @@ body {
   align-items: center;
   gap: 0;
   flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .menu__button {
@@ -441,7 +467,8 @@ body {
   html,
   body {
     height: auto;
-    overflow: auto;
+    overflow-x: clip;
+    overflow-y: auto;
   }
 
   .portfolio {
@@ -453,7 +480,7 @@ body {
   .portfolio__container {
     height: auto;
     padding: 0 24px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0px;
   }
 
@@ -462,13 +489,40 @@ body {
     position: static;
     padding: 20px 0;
     gap: 32px;
+    align-items: center;
+  }
+
+  .profile > div:first-child {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .profile__avatar-block {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .profile__about {
     width: 100%;
-    max-width: 290px;
-    font-size: 14px;
-    line-height: 18px;
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .profile__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu {
+    justify-content: center;
+  }
+
+  .profile__squiggle {
+    visibility: hidden;
   }
 
   .content {
@@ -509,6 +563,11 @@ body {
 }
 
 @media (min-width: 769px) and (max-width: 1120px) {
+
+  .profile__squiggle {
+    visibility: hidden;
+  }
+
   .footer {
     height: auto;
     min-height: 0;
@@ -525,12 +584,11 @@ body {
     text-align: center;
   }
 
-  .footer__arrow {
-    display: none;
-  }
-
   .footer__contacts {
     justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    gap: 8px;
   }
 }
 
@@ -538,7 +596,8 @@ body {
   html,
   body {
     height: auto;
-    overflow: auto;
+    overflow-x: clip;
+    overflow-y: auto;
   }
 
   .portfolio {
@@ -549,20 +608,25 @@ body {
 
   .portfolio__container {
     height: auto;
-    padding: 0 24px;
+    padding: 0 16px;
     gap: 0px;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .profile {
     height: auto;
     gap: 32px;
     position: static;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
   }
 
   .profile > div:first-child {
     align-items: center;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
   }
 
   .profile__avatar-block {
@@ -571,13 +635,21 @@ body {
   }
 
   .profile__about {
-    margin: 0 auto;
+    margin: 0 0px;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .profile__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
   }
 
   .profile__squiggle {
-    left: 50%;
-    transform-origin: center 88%;
-    animation-name: profile-squiggle-sway-centered;
+    visibility: hidden;
   }
 
   .footer__arrow {
@@ -617,28 +689,50 @@ body {
     justify-content: center;
     text-align: center;
     gap: 20px;
-    padding: 20px;
+    padding: 20px 16px;
   }
 
   .footer__text {
-    flex-wrap: wrap;
-    justify-content: center;
-    white-space: normal;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-  }
-
-  .footer__highlight {
-    height: 19px;
+    height: 28px;
   }
 
   .footer__contacts,
   .menu {
     justify-content: center;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .menu__button {
+    flex-shrink: 1;
   }
 
   .playground__layer--fg {
     visibility: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio__container {
+    padding: 0 12px;
+  }
+
+  .profile__about {
+    max-width: 320px;
+  }
+
+  .menu__button {
+    padding: 10px 12px 12px;
+    font-size: 14px;
+    line-height: 18px;
+    height: 40px;
+  }
+
+  .menu__button--resume {
+    padding-right: 10px;
+  }
+
+  .footer {
+    padding: 20px 12px;
   }
 }
