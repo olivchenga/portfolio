@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
+    <noscript><style>.portfolio, .portfolio img { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
     <main class="portfolio">
@@ -206,6 +207,31 @@
 
       if (content) {
         smoothTargetScrollTop = content.scrollTop;
+      }
+
+      const portfolio = document.querySelector(".portfolio");
+
+      const revealPortfolio = () => {
+        portfolio?.classList.add("is-visible");
+      };
+
+      document.querySelectorAll(".portfolio img").forEach((img) => {
+        const markLoaded = () => img.classList.add("is-loaded");
+
+        if (img.complete) {
+          markLoaded();
+          return;
+        }
+
+        img.addEventListener("load", markLoaded, { once: true });
+        img.addEventListener("error", markLoaded, { once: true });
+      });
+
+      if (document.readyState === "complete") {
+        requestAnimationFrame(revealPortfolio);
+      } else {
+        window.addEventListener("load", revealPortfolio, { once: true });
+        setTimeout(revealPortfolio, 3000);
       }
     </script>
   </body>
