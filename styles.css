@@ -1,5 +1,8 @@
 :root {
   --color-bg: #fdfdfd;
+  --color-dot: #EEEEEE;
+  --dot-size: 4px;
+  --dot-spacing: 36px;
   --color-surface: #f2f2f2;
   --color-text-primary: #373737;
   --color-text-secondary: #aaa;
@@ -8,8 +11,9 @@
   --color-dark-alpha: rgba(255, 255, 255, 0.15);
   --radius-card: 8px;
   --radius-pill: 26px;
-  --font-pixel: "Press Start 2P", system-ui, sans-serif;
   --font-main: "Suisse Intl", "Inter", "Segoe UI", sans-serif;
+  --color-accent: #b5f874;
+  --color-border: #dadada;
   --card-media-height: 280px;
   --cards-column-gap: 20px;
   --card-text-block-height: 46px;
@@ -23,40 +27,10 @@ html,
 body {
   height: 100%;
   margin: 0;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
   color: var(--color-text-primary);
   font-family: var(--font-main);
   overflow: hidden;
-  text-transform: lowercase;
-  cursor: none;
-}
-
-a,
-button,
-input,
-textarea,
-select,
-[role="button"] {
-  cursor: none;
-}
-
-.custom-cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 12px;
-  height: 12px;
-  background: #E75BAA;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 9999;
-  transform: translate(-100px, -100px);
-  transition: opacity 180ms ease;
-}
-
-.custom-cursor--visible {
-  opacity: 1;
 }
 
 .portfolio {
@@ -65,6 +39,18 @@ select,
   justify-content: center;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.portfolio::before {
+  content: "";
+  position: fixed;
+  inset: 24px;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--color-bg);
+  background-image: url("./assets/ui/dot-square.svg");
+  background-size: var(--dot-spacing) var(--dot-spacing);
 }
 
 .portfolio__container {
@@ -78,20 +64,6 @@ select,
   z-index: 2;
 }
 
-.portfolio__slashes {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  font-family: var(--font-pixel);
-  font-size: 162px;
-  line-height: 168px;
-  letter-spacing: -0.3em;
-  color: var(--color-surface);
-  text-transform: uppercase;
-  user-select: none;
-  z-index: 1;
-}
-
 .profile {
   height: 100vh;
   display: flex;
@@ -102,29 +74,80 @@ select,
   top: 0;
 }
 
+.profile > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile__avatar-block {
+  position: relative;
+  width: 157px;
+  height: 84px;
+  margin-bottom: 8px;
+}
+
+.profile__avatar-frame {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  padding: 4px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+  transform: rotate(2deg);
+}
+
 .profile__avatar {
   width: 72px;
   height: 72px;
-  border-radius: 50%;
+  border-radius: 16px;
   display: block;
-  margin-bottom: 32px;
+  object-fit: cover;
+  object-position: bottom;
 }
 
-.profile__name {
-  margin: 0 0 12px;
-  font-family: var(--font-pixel);
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+.profile__name-badge {
+  position: absolute;
+  left: 61px;
+  top: 51px;
+  width: 111px;
+  height: auto;
+  display: block;
+  pointer-events: none;
 }
 
 .profile__about {
-  width: min(340px, 100%);
+  width: min(339px, 100%);
   margin: 0;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.02em;
+}
+
+.profile__about-arrow {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2px;
+  width: 35px;
+  height: auto;
+}
+
+.profile__bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.profile__squiggle {
+  position: absolute;
+  left: -24px;
+  bottom: 86px;
+  width: 255px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
 }
 
 .content {
@@ -152,6 +175,7 @@ select,
 }
 
 .card {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
 }
@@ -190,7 +214,6 @@ select,
   line-height: 18px;
   color: var(--color-text-secondary);
   letter-spacing: -0.02em;
-  text-transform: lowercase;
 }
 
 .card__title {
@@ -200,7 +223,6 @@ select,
   line-height: 20px;
   letter-spacing: -0.02em;
   font-weight: 450;
-  text-transform: lowercase;
   transition: opacity 300ms ease-in-out;
 }
 
@@ -213,6 +235,7 @@ select,
 }
 
 .playground {
+  cursor: pointer;
   position: relative;
   width: 100%;
   height: 280px;
@@ -250,8 +273,7 @@ select,
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
-  backdrop-filter: blur(1px);
+  background: rgba(255, 255, 255, 0.01);
 }
 
 .playground__tag {
@@ -261,11 +283,12 @@ select,
   padding: 8px 12px 10px;
   border-radius: 35px;
   background: var(--color-dark-alpha);
+  backdrop-filter: blur(4px);
   color: var(--color-text-contrast);
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.02em;
-  text-transform: lowercase;
+  font-weight: 450;
   transition: opacity 300ms ease-in-out;
 }
 
@@ -273,14 +296,20 @@ select,
   width: 36px;
   height: 36px;
   border: 0;
-  padding: 2px 0 0 4px;
+  padding: 0;
   border-radius: 48px;
   background: var(--color-dark-alpha);
-  color: var(--color-text-contrast);
-  font-family: var(--font-pixel);
-  font-size: 16px;
-  line-height: 16px;
-  letter-spacing: -0.06em;
+  backdrop-filter: blur(4px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playground__chevron {
+  display: block;
+  width: 20px;
+  height: 20px;
+  transform: scaleX(-1);
 }
 
 .playground__button:hover {
@@ -302,26 +331,61 @@ select,
 }
 
 .footer {
+  position: relative;
+  box-sizing: border-box;
+  height: 84px;
   background: var(--color-dark);
   color: var(--color-text-contrast);
   border-radius: var(--radius-card);
-  padding: 20px 20px 20px 24px;
+  padding: 0 20px 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .footer__text {
+  height: 30px;
   margin: 0;
-  font-family: var(--font-pixel);
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 0;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
-.footer__contacts,
+.footer__highlight {
+  display: block;
+  margin-left: 2px;
+  flex-shrink: 0;
+}
+
+.footer__arrow {
+  position: absolute;
+  right: 390px;
+  top: -21px;
+  width: 52px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  transform: scaleX(-1) rotate(20deg);
+}
+
+.footer__contacts {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
 .menu {
   display: flex;
   align-items: center;
@@ -336,21 +400,33 @@ select,
   padding: 12px 16px 15px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   color: var(--color-text-contrast);
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.02em;
-  text-transform: lowercase;
   transition: background-color 300ms ease-in-out, opacity 300ms ease-in-out;
 }
 
-.menu__button--primary {
-  background: var(--color-dark);
+.menu__button--nav {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-weight: 450;
 }
 
-.menu__button--primary:hover {
-  background: #cf4d96;
+.menu__button--nav:hover {
+  background: #B5F874;
+  color: var(--color-text-primary);
+}
+
+.menu__button--resume {
+  padding-right: 12px;
+}
+
+.menu__chevron {
+  display: block;
+  width: 20px;
+  height: 20px;
+  transform: scaleX(-1);
 }
 
 .menu__button--secondary {
@@ -359,14 +435,6 @@ select,
 
 .menu__button--secondary:hover {
   opacity: 0.7;
-}
-
-.menu__arrow {
-  margin: 0;
-  padding: 4px 0 0 0;
-  font-family: var(--font-pixel);
-  font-size: 14px;
-  line-height: 14px;
 }
 
 @media (min-width: 769px) and (max-width: 1280px) {
@@ -384,22 +452,9 @@ select,
 
   .portfolio__container {
     height: auto;
-    padding: 0 16px;
+    padding: 0 24px;
     grid-template-columns: 1fr;
     gap: 0px;
-  }
-
-  .portfolio__slashes {
-    left: auto;
-    right: 0;
-    top: 24px;
-    bottom: auto;
-    font-size: 162px;
-    line-height: 168px;
-    z-index: 1;
-    text-align: right;
-    font-size: 136px;
-    line-height: 136px;
   }
 
   .profile {
@@ -451,19 +506,27 @@ select,
     padding: 16px;
   }
 
-  .footer {
-    padding: 20px 20px 20px 24px;
-    align-items: center;
-  }
 }
 
 @media (min-width: 769px) and (max-width: 1120px) {
   .footer {
+    height: auto;
+    min-height: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 20px
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer__text {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer__arrow {
+    display: none;
   }
 
   .footer__contacts {
@@ -476,20 +539,6 @@ select,
   body {
     height: auto;
     overflow: auto;
-    cursor: auto;
-  }
-
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  [role="button"] {
-    cursor: auto;
-  }
-
-  .custom-cursor {
-    display: none;
   }
 
   .portfolio {
@@ -511,15 +560,28 @@ select,
     position: static;
   }
 
-  .profile > div {
-    display: flex;
-    flex-direction: column;
+  .profile > div:first-child {
     align-items: center;
     text-align: center;
   }
 
+  .profile__avatar-block {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .profile__about {
     margin: 0 auto;
+  }
+
+  .profile__squiggle {
+    left: 50%;
+    transform-origin: center 88%;
+    animation-name: profile-squiggle-sway-centered;
+  }
+
+  .footer__arrow {
+    display: none;
   }
 
   .projects {
@@ -548,19 +610,32 @@ select,
   }
 
   .footer {
+    height: auto;
+    min-height: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 20px
+    gap: 20px;
+    padding: 20px;
   }
 
-  .footer__contacts, .menu {
+  .footer__text {
+    flex-wrap: wrap;
     justify-content: center;
+    white-space: normal;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
   }
 
-  .portfolio__slashes {
-    visibility: hidden;
+  .footer__highlight {
+    height: 19px;
+  }
+
+  .footer__contacts,
+  .menu {
+    justify-content: center;
   }
 
   .playground__layer--fg {
