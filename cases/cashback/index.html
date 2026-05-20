@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интеграция сервиса кешбэка в почту — Portfolio</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../case.css" />
+    <noscript><style>.portfolio, .portfolio img { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <main class="portfolio case-page">
+      <div class="portfolio__container">
+        <aside class="case-sidebar" aria-label="Навигация по кейсу">
+          <a class="case-back" href="../../index.html">
+            <img class="case-back__icon" src="../../assets/cases/cashback/chevron-back.svg" alt="" width="20" height="20" />
+            Назад
+          </a>
+          <nav class="case-nav">
+            <a class="case-nav__link" href="#context" data-scroll-target="context">
+              <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
+              Контекст и задача
+            </a>
+            <a class="case-nav__link" href="#process" data-scroll-target="process">
+              <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
+              Процесс
+            </a>
+            <a class="case-nav__link" href="#results" data-scroll-target="results">
+              <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
+              Результат
+            </a>
+            <a class="case-nav__link" href="#role" data-scroll-target="role">
+              <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
+              Моя роль
+            </a>
+          </nav>
+        </aside>
+
+        <section class="content case-content" aria-label="Кейс: интеграция кешбэка в почту">
+          <div class="case-block">
+            <div class="case-hero-media" aria-hidden="true">
+              <div class="case-hero-media__bg"></div>
+              <img class="case-hero-media__img" src="../../assets/cases/cashback/Header@1x.png" srcset="../../assets/cases/cashback/Header@1x.png 1x, ../../assets/cases/cashback/Header@2x.png 2x" alt="" loading="eager" decoding="async" />
+            </div>
+
+            <article class="case-panel case-panel--padded case-intro" id="context">
+              <div class="case-intro__lead">
+                <h1 class="case-title">
+                  Как мы превратили 30&nbsp;млн чеков на&nbsp;почте в&nbsp;источник выручки
+                </h1>
+                <div class="case-meta">
+                  <span>2025</span>
+                  <span>/</span>
+                  <span>mobile</span>
+                  <span>/</span>
+                  <span>web</span>
+                </div>
+              </div>
+              <div class="case-copy-stack">
+                <div class="case-copy-block">
+                  <h2 class="case-h2">Контекст</h2>
+                  <div class="case-text">
+                    <p>
+                      Каждый день пользователи Почты mail получают около&nbsp;30&nbsp;млн&nbsp;чеков. Просто получают&nbsp;— и&nbsp;всё. В&nbsp;экосистеме VK при&nbsp;этом живёт сервис Чекбэк: он&nbsp;даёт кешбэк за&nbsp;покупки, но&nbsp;требует сканировать чеки вручную
+                    </p>
+                  </div>
+                </div>
+                <div class="case-copy-block">
+                  <h2 class="case-h2">Проблема</h2>
+                  <p class="case-text">
+                    Десятки миллионов чеков на&nbsp;почте каждый день не&nbsp;приносят ни&nbsp;пользы пользователям, ни&nbsp;выручки бизнесу
+                  </p>
+                </div>
+                <div class="case-copy-block">
+                  <h2 class="case-h2">Продуктовая цель</h2>
+                  <p class="case-text">
+                    Запустить новый ценностный сценарий в&nbsp;почте: автоматически начислять кешбэк за&nbsp;чеки, которые уже&nbsp;и&nbsp;так приходят пользователю&nbsp;— через&nbsp;интеграцию с&nbsp;VK Чекбэк
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="case-block" id="process">
+            <div class="case-split">
+              <article class="case-panel case-panel--padded case-split__text">
+                <span class="case-tag">Discover &amp; define</span>
+                <div class="case-copy-block">
+                  <h2 class="case-h2">Поиск УТП</h2>
+                  <div class="case-text">
+                    <p>
+                      Исследование рынка показало два&nbsp;ключевых барьера использования сервисов кешбэка: слишком много усилий и&nbsp;нерентабельность&nbsp;— люди не&nbsp;готовы сканировать чеки вручную ради&nbsp;небольшой суммы. Автоматическое начисление кешбэка за&nbsp;чеки, которые и&nbsp;так&nbsp;приходят на&nbsp;почту, снимало оба&nbsp;барьера сразу.
+                    </p>
+                    <p>Это&nbsp;и&nbsp;стало нашим УТП</p>
+                  </div>
+                </div>
+                <div class="case-copy-block">
+                  <h2 class="case-h2">Главное ограничение</h2>
+                  <div class="case-text">
+                    <p>
+                      При подписании договора мы получили жёсткое ограничение от партнёра: пользователь&nbsp;обязан&nbsp;выбрать акцию до покупки товара — иначе каннибализация бизнеса. Отказаться от этого шага было нельзя.
+                    </p>
+                    <p>Весь дизайн строился вокруг одного вопроса: как сделать обязательный шаг незаметным?</p>
+                  </div>
+                </div>
+              </article>
+              <div class="case-media-panel" aria-hidden="true">
+                <img class="case-media-panel__img" src="../../assets/cases/cashback/IMG_2.png" srcset="../../assets/cases/cashback/IMG_2.png 1x, ../../assets/cases/cashback/IMG_2@2x.png 2x" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+
+            <article class="case-panel case-panel--padded">
+              <span class="case-tag">Develop</span>
+              <div class="case-copy-block">
+                <h2 class="case-h2">Как мы понимали, где болит</h2>
+                <div class="case-text">
+                  <p>На&nbsp;протяжении всей работы мы&nbsp;не&nbsp;угадывали&nbsp;— проверяли.</p>
+                  <p>
+                    Юзабилити-тесты помогали понять, где&nbsp;пользователь теряется в&nbsp;интерфейсе. Количественные исследования показывали, какие коммуникации работают, а&nbsp;какие игнорируются. Дневниковые исследования на&nbsp;проде давали честную картину: как&nbsp;люди пользуются сервисом в&nbsp;реальной жизни, а&nbsp;не&nbsp;в&nbsp;условиях теста. Каждый метод&nbsp;— под&nbsp;конкретный вопрос, который стоял перед&nbsp;нами в&nbsp;тот&nbsp;момент
+                  </p>
+                </div>
+              </div>
+              <div class="case-quotes">
+                <figure class="case-quote">
+                  <img class="case-quote__avatar" src="../../assets/cases/cashback/avatar-1@2x.png" alt="" width="44" height="44" />
+                  <figcaption class="case-quote__text">«я не понимаю, зачем мне выбирать акцию»</figcaption>
+                </figure>
+                <figure class="case-quote">
+                  <img class="case-quote__avatar" src="../../assets/cases/cashback/avatar-2.png" alt="" width="44" height="44" />
+                  <figcaption class="case-quote__text">«а как мне получить кешбэк после выбора?»</figcaption>
+                </figure>
+                <figure class="case-quote">
+                  <img class="case-quote__avatar" src="../../assets/cases/cashback/avatar-3.png" alt="" width="44" height="44" />
+                  <figcaption class="case-quote__text">«это мне теперь товары картой VK Pay оплачивать что ли? я тогда не буду этим пользоваться»</figcaption>
+                </figure>
+                <figure class="case-quote">
+                  <img class="case-quote__avatar" src="../../assets/cases/cashback/avatar-4.png" alt="" width="44" height="44" />
+                  <figcaption class="case-quote__text">«обычно захожу в такие сервисы с кешбэком ради бонусов и всяких розыгрышей»</figcaption>
+                </figure>
+                <figure class="case-quote">
+                  <img class="case-quote__avatar" src="../../assets/cases/cashback/avatar-5.png" alt="" width="44" height="44" />
+                  <figcaption class="case-quote__text">«для&nbsp;меня кешбэк&nbsp;— это&nbsp;не&nbsp;заработок, а&nbsp;скорее небольшая экономия»</figcaption>
+                </figure>
+              </div>
+            </article>
+
+            <article class="case-panel case-panel--padded">
+              <span class="case-tag">Deliver</span>
+              <div class="case-copy-block">
+                <h2 class="case-h2">Что сработало из 40+ гипотез</h2>
+                <ul class="case-list">
+                  <li class="case-list__item">
+                    <img class="case-list__bullet" src="../../assets/cases/cashback/bullet.svg" alt="" width="7" height="17" />
+                    <span class="case-text">Туннельный онбординг&nbsp;— провёл пользователя «за&nbsp;ручку» по&nbsp;всем шагам и&nbsp;поднял конверсию воронки</span>
+                  </li>
+                  <li class="case-list__item">
+                    <img class="case-list__bullet" src="../../assets/cases/cashback/bullet.svg" alt="" width="7" height="17" />
+                    <span class="case-text">Тиндер-свайп для&nbsp;выбора товаров&nbsp;— геймифицировал обязательный шаг&nbsp;и&nbsp;повысил вовлечённость</span>
+                  </li>
+                  <li class="case-list__item">
+                    <img class="case-list__bullet" src="../../assets/cases/cashback/bullet.svg" alt="" width="7" height="17" />
+                    <span class="case-text">Инструкция по&nbsp;настройке получения чеков&nbsp;на&nbsp;почту&nbsp;— снизила барьер входа для&nbsp;новых пользователей</span>
+                  </li>
+                  <li class="case-list__item">
+                    <img class="case-list__bullet" src="../../assets/cases/cashback/bullet.svg" alt="" width="7" height="17" />
+                    <span class="case-text">Выбор акции + авторизация на&nbsp;одном экране&nbsp;— убрала лишний шаг&nbsp;из&nbsp;воронки</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <section class="case-carousel" data-carousel aria-label="Гипотезы — карусель" aria-roledescription="carousel">
+              <div class="case-carousel__slides">
+                <article class="case-carousel__slide is-active" data-carousel-slide aria-hidden="false">
+                  <div class="case-carousel__header">
+                    <div>
+                      <h2 class="case-carousel__title">Туннельный онбординг</h2>
+                      <p class="case-carousel__subtitle">Проводим пользователя по&nbsp;этапам получения кешбэка,&nbsp;чтобы разъяснить механику</p>
+                    </div>
+                    <div class="case-carousel__metric">
+                      <p class="case-carousel__metric-value">+10 п.п.</p>
+                      <p class="case-carousel__metric-label">CR в выбор акции</p>
+                    </div>
+                  </div>
+                  <img class="case-carousel__media" src="../../assets/cases/cashback/case-1@1x.png" srcset="../../assets/cases/cashback/case-1@1x.png 1x, ../../assets/cases/cashback/case-1@2x.png 2x" alt="" loading="eager" decoding="async" />
+                </article>
+
+                <article class="case-carousel__slide" data-carousel-slide aria-hidden="true">
+                  <div class="case-carousel__header">
+                    <div>
+                      <h2 class="case-carousel__title">Тиндер-свайп для&nbsp;выбора товаров</h2>
+                      <p class="case-carousel__subtitle">Геймифицируем механику выбора товаров, чтобы&nbsp;повысить вовлечённость</p>
+                    </div>
+                    <div class="case-carousel__metric">
+                      <p class="case-carousel__metric-value">+12%</p>
+                      <p class="case-carousel__metric-label">выбранных акций</p>
+                    </div>
+                  </div>
+                  <img class="case-carousel__media" src="../../assets/cases/cashback/case-2@1x.png" srcset="../../assets/cases/cashback/case-2@1x.png 1x, ../../assets/cases/cashback/case-2@2x.png 2x" alt="" loading="lazy" decoding="async" />
+                </article>
+
+                <article class="case-carousel__slide" data-carousel-slide aria-hidden="true">
+                  <div class="case-carousel__header">
+                    <div>
+                      <h2 class="case-carousel__title">Инструкция: как&nbsp;получать чеки на&nbsp;почту</h2>
+                      <p class="case-carousel__subtitle">Объясняем пошагово, чтобы&nbsp;снизить барьер входа новых пользователей</p>
+                    </div>
+                    <div class="case-carousel__metric">
+                      <p class="case-carousel__metric-value">+1,2 п.п.</p>
+                      <p class="case-carousel__metric-label">CR в транзакцию</p>
+                    </div>
+                  </div>
+                  <img class="case-carousel__media" src="../../assets/cases/cashback/case-3@1x.png" srcset="../../assets/cases/cashback/case-3@1x.png 1x, ../../assets/cases/cashback/case-3@2x.png 2x" alt="" loading="lazy" decoding="async" />
+                </article>
+
+                <article class="case-carousel__slide" data-carousel-slide aria-hidden="true">
+                  <div class="case-carousel__header">
+                    <div>
+                      <h2 class="case-carousel__title">Выбор акции и&nbsp;принятие согласия в&nbsp;одном</h2>
+                      <p class="case-carousel__subtitle">Схлопываем два шага,&nbsp;чтобы улучшить воронку</p>
+                    </div>
+                    <div class="case-carousel__metric">
+                      <p class="case-carousel__metric-value">+5 п.п.</p>
+                      <p class="case-carousel__metric-label">CR в выбор акции</p>
+                    </div>
+                  </div>
+                  <img class="case-carousel__media" src="../../assets/cases/cashback/case-4@1x.png" srcset="../../assets/cases/cashback/case-4@1x.png 1x, ../../assets/cases/cashback/case-4@2x.png 2x" alt="" loading="lazy" decoding="async" />
+                </article>
+              </div>
+
+              <div class="case-carousel__controls">
+                <button class="case-carousel__control case-carousel__control--prev" type="button" data-carousel-prev aria-label="Предыдущий слайд">
+                  <img class="case-carousel__control-icon" src="../../assets/ui/chevron.svg" alt="" width="20" height="20" />
+                </button>
+                <button class="case-carousel__control case-carousel__control--next" type="button" data-carousel-next aria-label="Следующий слайд">
+                  <img class="case-carousel__control-icon" src="../../assets/ui/chevron.svg" alt="" width="20" height="20" />
+                </button>
+              </div>
+
+              <div class="case-carousel__dots" role="tablist" aria-label="Слайды карусели">
+                <button class="case-carousel__dot case-carousel__dot--active" type="button" role="tab" aria-selected="true" aria-label="Слайд 1" data-carousel-dot="0"></button>
+                <button class="case-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Слайд 2" data-carousel-dot="1"></button>
+                <button class="case-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Слайд 3" data-carousel-dot="2"></button>
+                <button class="case-carousel__dot" type="button" role="tab" aria-selected="false" aria-label="Слайд 4" data-carousel-dot="3"></button>
+              </div>
+            </section>
+          </div>
+
+          <article class="case-panel case-panel--padded" id="results">
+            <h2 class="case-h2">Результаты</h2>
+            <p class="case-text">
+              Несмотря на&nbsp;жёсткие ограничения со&nbsp;стороны партнёра&nbsp;— обязательный выбор акций и&nbsp;небольшой ассортимент&nbsp;— сценарий доказал свою жизнеспособность как&nbsp;новый источник транзакционной выручки в&nbsp;почте
+            </p>
+            <div class="case-metrics">
+              <div class="case-metric">
+                <p class="case-metric__value">0.X</p>
+                <p class="case-metric__label">млн gmv в день</p>
+              </div>
+              <div class="case-metric">
+                <p class="case-metric__value">XXX</p>
+                <p class="case-metric__label">тыс. пользователей</p>
+              </div>
+              <div class="case-metric">
+                <p class="case-metric__value">13%</p>
+                <p class="case-metric__label">конверсия в выбор акции</p>
+              </div>
+              <div class="case-metric">
+                <p class="case-metric__value">6%</p>
+                <p class="case-metric__label">retention 7d</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-panel case-panel--padded" id="role">
+            <h2 class="case-h2">Моя роль</h2>
+            <div class="case-text">
+              <p>
+                В проекте я выступала продуктовым дизайнером в&nbsp;команде с&nbsp;исследователем, продакт-менеджером и&nbsp;редактором. Вместе мы формулировали продуктовые гипотезы.
+              </p>
+              <p>
+                Я отвечала за&nbsp;весь дизайн&nbsp;— от&nbsp;идеи до&nbsp;дизайн-ревью на&nbsp;проде, грумила решения с&nbsp;разработчиками, следила за&nbsp;аналитикой и&nbsp;инициировала улучшения на&nbsp;основе исследований
+              </p>
+            </div>
+          </article>
+
+          <footer class="footer" id="contacts">
+            <p class="footer__text">
+              Открыта к новым проектам
+            </p>
+            <img class="footer__arrow" src="../../assets/ui/footer-arrow.svg" alt="" width="52" height="71" />
+            <div class="footer__contacts">
+              <a class="menu__button menu__button--secondary" href="mailto:olivchenga@gmail.com" target="_blank" rel="noopener noreferrer">olivchenga@gmail.com</a>
+              <a class="menu__button menu__button--secondary" href="https://t.me/olya_sick" target="_blank" rel="noopener noreferrer">Telegram</a>
+              <a class="menu__button menu__button--secondary" href="#" target="_blank" rel="noopener noreferrer">VK</a>
+            </div>
+          </footer>
+        </section>
+      </div>
+    </main>
+    <script>
+      const content = document.querySelector(".content");
+      const navAnchors = document.querySelectorAll("[data-scroll-target]");
+      let smoothTargetScrollTop = 0;
+      let smoothAnimationFrame = null;
+
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+      const runSmoothScroll = () => {
+        if (!content) {
+          smoothAnimationFrame = null;
+          return;
+        }
+
+        const diff = smoothTargetScrollTop - content.scrollTop;
+        if (Math.abs(diff) < 0.5) {
+          content.scrollTop = smoothTargetScrollTop;
+          smoothAnimationFrame = null;
+          return;
+        }
+
+        content.scrollTop += diff * 0.14;
+        smoothAnimationFrame = window.requestAnimationFrame(runSmoothScroll);
+      };
+
+      const scrollToNavTarget = (target) => {
+        if (!content || !target) {
+          return;
+        }
+
+        const maxScrollTop = content.scrollHeight - content.clientHeight;
+        const useContentScroll =
+          maxScrollTop > 1 && !window.matchMedia("(max-width: 1280px)").matches;
+
+        if (useContentScroll) {
+          const contentTop = content.getBoundingClientRect().top;
+          const targetTop = target.getBoundingClientRect().top;
+          const nextTop = clamp(
+            content.scrollTop + (targetTop - contentTop),
+            0,
+            Math.max(0, maxScrollTop)
+          );
+          smoothTargetScrollTop = nextTop;
+          if (!smoothAnimationFrame) {
+            smoothAnimationFrame = window.requestAnimationFrame(runSmoothScroll);
+          }
+          return;
+        }
+
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+
+      navAnchors.forEach((anchor) => {
+        anchor.addEventListener("click", (event) => {
+          event.preventDefault();
+          const targetId = anchor.getAttribute("data-scroll-target");
+          const target = document.getElementById(targetId);
+          scrollToNavTarget(target);
+        });
+      });
+
+      window.addEventListener(
+        "wheel",
+        (event) => {
+          if (!content || window.matchMedia("(max-width: 1280px)").matches) {
+            return;
+          }
+
+          if (event.ctrlKey) {
+            return;
+          }
+
+          const interactiveSelector = "input, textarea, select, [contenteditable='true']";
+          if (event.target instanceof Element && event.target.closest(interactiveSelector)) {
+            return;
+          }
+
+          event.preventDefault();
+          const maxScrollTop = content.scrollHeight - content.clientHeight;
+          smoothTargetScrollTop = clamp(smoothTargetScrollTop + event.deltaY, 0, Math.max(0, maxScrollTop));
+
+          if (!smoothAnimationFrame) {
+            smoothAnimationFrame = window.requestAnimationFrame(runSmoothScroll);
+          }
+        },
+        { passive: false }
+      );
+
+      if (content) {
+        smoothTargetScrollTop = content.scrollTop;
+      }
+
+      const portfolio = document.querySelector(".portfolio");
+
+      const revealPortfolio = () => {
+        portfolio?.classList.add("is-visible");
+      };
+
+      const waitForImage = (img) =>
+        img.complete
+          ? Promise.resolve()
+          : new Promise((resolve) => {
+              img.addEventListener("load", resolve, { once: true });
+              img.addEventListener("error", resolve, { once: true });
+            });
+
+      const revealImageSelector =
+        ".portfolio img:not(.case-hero-media__img):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon)";
+
+      document.querySelectorAll(revealImageSelector).forEach((img) => {
+        const markLoaded = () => img.classList.add("is-loaded");
+
+        if (img.complete) {
+          markLoaded();
+          return;
+        }
+
+        img.addEventListener("load", markLoaded, { once: true });
+        img.addEventListener("error", markLoaded, { once: true });
+      });
+
+      const criticalImages = [...document.querySelectorAll(".portfolio img")].filter(
+        (img) => img.loading !== "lazy"
+      );
+
+      Promise.race([
+        Promise.all(criticalImages.map(waitForImage)),
+        new Promise((resolve) => setTimeout(resolve, 2000)),
+      ]).then(() => requestAnimationFrame(revealPortfolio));
+
+      const carousel = document.querySelector("[data-carousel]");
+      if (carousel) {
+        const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
+        const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
+        const prevButton = carousel.querySelector("[data-carousel-prev]");
+        const nextButton = carousel.querySelector("[data-carousel-next]");
+        let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
+        if (activeIndex < 0) {
+          activeIndex = 0;
+        }
+
+        const goToSlide = (index) => {
+          const nextIndex = (index + slides.length) % slides.length;
+          activeIndex = nextIndex;
+
+          slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === nextIndex;
+            slide.classList.toggle("is-active", isActive);
+            slide.setAttribute("aria-hidden", String(!isActive));
+          });
+
+          dots.forEach((dot, dotIndex) => {
+            const isActive = dotIndex === nextIndex;
+            dot.classList.toggle("case-carousel__dot--active", isActive);
+            dot.setAttribute("aria-selected", String(isActive));
+          });
+        };
+
+        prevButton?.addEventListener("click", () => goToSlide(activeIndex - 1));
+        nextButton?.addEventListener("click", () => goToSlide(activeIndex + 1));
+
+        dots.forEach((dot) => {
+          dot.addEventListener("click", () => {
+            const index = Number(dot.getAttribute("data-carousel-dot"));
+            if (!Number.isNaN(index)) {
+              goToSlide(index);
+            }
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
