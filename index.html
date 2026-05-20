@@ -10,29 +10,33 @@
     <link
       rel="preload"
       as="image"
-      href="./assets/avatar/avatar@1x.png"
-      imagesrcset="./assets/avatar/avatar@2x.png 2x, ./assets/avatar/avatar@3x.png 3x"
+      type="image/webp"
+      href="./assets/avatar/avatar@1x.webp"
+      imagesrcset="./assets/avatar/avatar@2x.webp 2x"
     />
     <link
       rel="preload"
       as="image"
+      type="image/webp"
       href="./assets/ui/name-badge@1x.png"
       imagesrcset="./assets/ui/name-badge@2x.png 2x, ./assets/ui/name-badge@3x.png 3x"
     />
     <link
       rel="preload"
       as="image"
-      href="./assets/cards/card-1@1x.png"
-      imagesrcset="./assets/cards/card-1@2x.png 2x, ./assets/cards/card-1@3x.png 3x"
+      type="image/webp"
+      href="./assets/cards/card-1@1x.webp"
+      imagesrcset="./assets/cards/card-1@2x.webp 2x"
       imagesizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)"
     />
     <link
       rel="preload"
       as="image"
-      href="./assets/cards/card-4@1x.png"
-      imagesrcset="./assets/cards/card-4@2x.png 2x, ./assets/cards/card-4@3x.png 3x"
+      type="image/webp"
+      href="./assets/cards/card-4@1x.webp"
+      imagesrcset="./assets/cards/card-4@2x.webp 2x"
       imagesizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)"
-      media="(min-width: 1281px)"
+      media="(min-width: 769px)"
     />
     <noscript><style>.portfolio, .portfolio img { opacity: 1; transform: none; }</style></noscript>
   </head>
@@ -43,7 +47,10 @@
           <div>
             <div class="profile__avatar-block">
               <div class="profile__avatar-frame">
-                <img class="profile__avatar" src="./assets/avatar/avatar@1x.png" srcset="./assets/avatar/avatar@2x.png 2x, ./assets/avatar/avatar@3x.png 3x" alt="аватар Оли Ивченко" decoding="async" fetchpriority="high" />
+                <picture>
+                  <source type="image/webp" srcset="./assets/avatar/avatar@1x.webp 1x, ./assets/avatar/avatar@2x.webp 2x" />
+                  <img class="profile__avatar" src="./assets/avatar/avatar@1x.png" srcset="./assets/avatar/avatar@2x.png 2x" alt="аватар Оли Ивченко" decoding="async" fetchpriority="high" />
+                </picture>
               </div>
               <img class="profile__name-badge" src="./assets/ui/name-badge@1x.png" srcset="./assets/ui/name-badge@2x.png 2x, ./assets/ui/name-badge@3x.png 3x" alt="оля ивченко" width="111" height="41" decoding="async" fetchpriority="high" />
             </div>
@@ -70,7 +77,8 @@
             <div class="projects__col">
               <article class="card">
                 <picture class="card__media">
-                  <img class="card__image" src="./assets/cards/card-1@1x.png" srcset="./assets/cards/card-1@2x.png 2x, ./assets/cards/card-1@3x.png 3x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Интеграция сервиса кешбэка в почту" decoding="async" fetchpriority="high" />
+                  <source type="image/webp" srcset="./assets/cards/card-1@1x.webp 1x, ./assets/cards/card-1@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
+                  <img class="card__image" src="./assets/cards/card-1@1x.png" srcset="./assets/cards/card-1@1x.png 1x, ./assets/cards/card-1@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Интеграция сервиса кешбэка в почту" decoding="async" fetchpriority="high" />
                 </picture>
                 <div class="card__meta">2025&nbsp; /&nbsp; mobile&nbsp; /&nbsp; web</div>
                 <h2 class="card__title">Интеграция сервиса кешбэка в почту</h2>
@@ -78,7 +86,8 @@
 
               <article class="card">
                 <picture class="card__media">
-                  <img class="card__image" src="./assets/cards/card-2@1x.png" srcset="./assets/cards/card-2@2x.png 2x, ./assets/cards/card-2@3x.png 3x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Интеграция автозагрузки файлов в почту" loading="lazy" decoding="async" />
+                  <source type="image/webp" srcset="./assets/cards/card-2@1x.webp 1x, ./assets/cards/card-2@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
+                  <img class="card__image" src="./assets/cards/card-2@1x.png" srcset="./assets/cards/card-2@1x.png 1x, ./assets/cards/card-2@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Интеграция автозагрузки файлов в почту" loading="lazy" decoding="async" />
                 </picture>
                 <div class="card__meta">2024&nbsp; /&nbsp; mobile</div>
                 <h2 class="card__title">Интеграция автозагрузки файлов в почту</h2>
@@ -86,7 +95,8 @@
 
               <article class="card">
                 <picture class="card__media">
-                  <img class="card__image" src="./assets/cards/card-3@1x.png" srcset="./assets/cards/card-3@2x.png 2x, ./assets/cards/card-3@3x.png 3x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Спецпроект с кешбэком за чеки в почте" loading="lazy" decoding="async" />
+                  <source type="image/webp" srcset="./assets/cards/card-3@1x.webp 1x, ./assets/cards/card-3@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
+                  <img class="card__image" src="./assets/cards/card-3@1x.png" srcset="./assets/cards/card-3@1x.png 1x, ./assets/cards/card-3@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Спецпроект с кешбэком за чеки в почте" loading="lazy" decoding="async" />
                 </picture>
                 <div class="card__meta">2025&nbsp; /&nbsp; mobile</div>
                 <h2 class="card__title">Спецпроект с кешбэком за чеки в почте</h2>
@@ -96,7 +106,8 @@
             <div class="projects__col">
               <article class="card card--tall">
                 <picture class="card__media card__media--tall">
-                  <img class="card__image card__image--tall" src="./assets/cards/card-4@1x.png" srcset="./assets/cards/card-4@2x.png 2x, ./assets/cards/card-4@3x.png 3x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Редизайн раздела развлечения в почте" loading="lazy" decoding="async" />
+                  <source type="image/webp" srcset="./assets/cards/card-4@1x.webp 1x, ./assets/cards/card-4@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
+                  <img class="card__image card__image--tall" src="./assets/cards/card-4@1x.png" srcset="./assets/cards/card-4@1x.png 1x, ./assets/cards/card-4@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Редизайн раздела развлечения в почте" loading="lazy" decoding="async" />
                 </picture>
                 <div class="card__meta">2026&nbsp; /&nbsp; mobile</div>
                 <h2 class="card__title">Редизайн раздела развлечения в почте</h2>
@@ -104,7 +115,8 @@
 
               <article class="card">
                 <picture class="card__media">
-                  <img class="card__image" src="./assets/cards/card-5@1x.png" srcset="./assets/cards/card-5@2x.png 2x, ./assets/cards/card-5@3x.png 3x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Очистка места на телефоне" loading="lazy" decoding="async" />
+                  <source type="image/webp" srcset="./assets/cards/card-5@1x.webp 1x, ./assets/cards/card-5@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
+                  <img class="card__image" src="./assets/cards/card-5@1x.png" srcset="./assets/cards/card-5@1x.png 1x, ./assets/cards/card-5@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Очистка места на телефоне" loading="lazy" decoding="async" />
                 </picture>
                 <div class="card__meta">2024&nbsp; /&nbsp; mobile</div>
                 <h2 class="card__title">Очистка места на телефоне</h2>
@@ -114,10 +126,12 @@
 
           <section class="playground" aria-label="UI Playground">
             <picture class="playground__layer playground__layer--bg">
-              <img class="playground__img" src="./assets/playground/playground-bg@1x.png" srcset="./assets/playground/playground-bg@2x.png 2x, ./assets/playground/playground-bg@3x.png 3x" alt="" loading="lazy" />
+              <source type="image/webp" srcset="./assets/playground/playground-bg@1x.webp 1x, ./assets/playground/playground-bg@2x.webp 2x" />
+              <img class="playground__img" src="./assets/playground/playground-bg@1x.png" srcset="./assets/playground/playground-bg@2x.png 2x" alt="" loading="lazy" decoding="async" />
             </picture>
             <picture class="playground__layer playground__layer--fg">
-              <img class="playground__img" src="./assets/playground/playground-fg@1x.png" srcset="./assets/playground/playground-fg@2x.png 2x, ./assets/playground/playground-fg@3x.png 3x" alt="" loading="lazy" />
+              <source type="image/webp" srcset="./assets/playground/playground-fg@1x.webp 1x, ./assets/playground/playground-fg@2x.webp 2x" />
+              <img class="playground__img" src="./assets/playground/playground-fg@1x.png" srcset="./assets/playground/playground-fg@2x.png 2x" alt="" loading="lazy" decoding="async" />
             </picture>
             <div class="playground__blur">
               <span class="playground__tag">UI playground</span>
@@ -250,7 +264,7 @@
               img.addEventListener("error", resolve, { once: true });
             });
 
-      document.querySelectorAll(".portfolio img").forEach((img) => {
+      document.querySelectorAll(".portfolio img:not(.card__image):not(.playground__img)").forEach((img) => {
         const markLoaded = () => img.classList.add("is-loaded");
 
         if (img.complete) {
@@ -262,6 +276,20 @@
         img.addEventListener("error", markLoaded, { once: true });
       });
 
+      const cardSizes = "(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)";
+      const cardSources = [
+        ["./assets/cards/card-2@1x.webp", "./assets/cards/card-2@2x.webp"],
+        ["./assets/cards/card-3@1x.webp", "./assets/cards/card-3@2x.webp"],
+        ["./assets/cards/card-5@1x.webp", "./assets/cards/card-5@2x.webp"],
+      ];
+
+      const prefetchCard = ([oneX, twoX]) => {
+        const prefetch = new Image();
+        prefetch.sizes = cardSizes;
+        prefetch.srcset = `${oneX} 1x, ${twoX} 2x`;
+        prefetch.src = oneX;
+      };
+
       const criticalImages = [...document.querySelectorAll(".portfolio img")].filter(
         (img) => img.loading !== "lazy"
       );
@@ -269,7 +297,15 @@
       Promise.race([
         Promise.all(criticalImages.map(waitForImage)),
         new Promise((resolve) => setTimeout(resolve, 2000)),
-      ]).then(() => requestAnimationFrame(revealPortfolio));
+      ]).then(() => {
+        requestAnimationFrame(revealPortfolio);
+
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(() => cardSources.forEach(prefetchCard));
+        } else {
+          setTimeout(() => cardSources.forEach(prefetchCard), 300);
+        }
+      });
     </script>
   </body>
 </html>

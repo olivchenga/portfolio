@@ -55,7 +55,7 @@ body {
   transform: translateY(0);
 }
 
-.portfolio img {
+.portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow) {
   opacity: 0;
   transform: translateY(-10px);
   transition:
@@ -63,7 +63,7 @@ body {
     transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.portfolio img.is-loaded {
+.portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow).is-loaded {
   opacity: 1;
   transform: translateY(0);
 }
@@ -222,6 +222,7 @@ body {
   border-radius: var(--radius-card);
   overflow: hidden;
   flex-shrink: 0;
+  background: var(--color-surface);
 }
 
 .card__media--tall {
@@ -762,7 +763,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .portfolio,
-  .portfolio img {
+  .portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow) {
     opacity: 1;
     transform: none;
     transition: none;
