@@ -562,6 +562,7 @@ body {
   }
 
   .content {
+    max-height: none;
     height: auto;
     overflow: visible;
     gap: 16px;
@@ -697,6 +698,7 @@ body {
   }
 
   .content {
+    max-height: none;
     height: auto;
     overflow: visible;
     padding-right: 0;
@@ -741,10 +743,6 @@ body {
 
   .menu__button {
     flex-shrink: 1;
-  }
-
-  .playground__layer--fg {
-    visibility: hidden;
   }
 }
 
