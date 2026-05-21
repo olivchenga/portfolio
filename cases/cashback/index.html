@@ -12,28 +12,37 @@
     <main class="portfolio case-page">
       <div class="portfolio__container">
         <aside class="case-sidebar" aria-label="Навигация по кейсу">
-          <a class="case-back" href="../../index.html">
-            <img class="case-back__icon" src="../../assets/cases/cashback/chevron-back.svg" alt="" width="20" height="20" />
-            Назад
-          </a>
-          <nav class="case-nav">
-            <a class="case-nav__link" href="#context" data-scroll-target="context">
-              <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
-              Контекст и задача
-            </a>
-            <a class="case-nav__link" href="#process" data-scroll-target="process">
-              <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
-              Процесс
-            </a>
-            <a class="case-nav__link" href="#results" data-scroll-target="results">
-              <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
-              Результат
-            </a>
-            <a class="case-nav__link" href="#role" data-scroll-target="role">
-              <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
-              Моя роль
-            </a>
-          </nav>
+          <div class="case-sidebar__bar">
+            <div class="case-sidebar__header">
+              <a class="case-back" href="../../index.html">
+                <img class="case-back__icon" src="../../assets/cases/cashback/chevron-back.svg" alt="" width="20" height="20" />
+                Назад
+              </a>
+              <button class="case-burger" type="button" aria-expanded="false" aria-controls="case-nav" aria-label="Разделы кейса">
+                <span class="case-burger__line" aria-hidden="true"></span>
+                <span class="case-burger__line" aria-hidden="true"></span>
+                <span class="case-burger__line" aria-hidden="true"></span>
+              </button>
+            </div>
+            <nav class="case-nav" id="case-nav">
+              <a class="case-nav__link" href="#context" data-scroll-target="context">
+                <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
+                Контекст и задача
+              </a>
+              <a class="case-nav__link" href="#process" data-scroll-target="process">
+                <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
+                Процесс
+              </a>
+              <a class="case-nav__link" href="#results" data-scroll-target="results">
+                <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
+                Результат
+              </a>
+              <a class="case-nav__link" href="#role" data-scroll-target="role">
+                <img class="case-nav__marker" src="../../assets/cases/cashback/nav-marker.svg" alt="" width="7" height="11" />
+                Моя роль
+              </a>
+            </nav>
+          </div>
         </aside>
 
         <section class="content case-content" aria-label="Кейс: интеграция кешбэка в почту">
@@ -348,6 +357,59 @@
 
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       };
+
+      const caseSidebar = document.querySelector(".case-sidebar");
+      const caseBurger = document.querySelector(".case-burger");
+      const caseNav = document.getElementById("case-nav");
+      const caseNavMedia = window.matchMedia("(max-width: 1120px)");
+
+      const closeCaseMenu = () => {
+        caseSidebar?.classList.remove("is-menu-open");
+        caseBurger?.setAttribute("aria-expanded", "false");
+      };
+
+      const toggleCaseMenu = () => {
+        if (!caseSidebar || !caseBurger) {
+          return;
+        }
+        const isOpen = caseSidebar.classList.toggle("is-menu-open");
+        caseBurger.setAttribute("aria-expanded", String(isOpen));
+      };
+
+      caseBurger?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleCaseMenu();
+      });
+
+      caseNav?.querySelectorAll(".case-nav__link").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (caseNavMedia.matches) {
+            closeCaseMenu();
+          }
+        });
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!caseNavMedia.matches || !caseSidebar?.classList.contains("is-menu-open")) {
+          return;
+        }
+        if (event.target instanceof Element && event.target.closest(".case-sidebar")) {
+          return;
+        }
+        closeCaseMenu();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeCaseMenu();
+        }
+      });
+
+      caseNavMedia.addEventListener("change", () => {
+        if (!caseNavMedia.matches) {
+          closeCaseMenu();
+        }
+      });
 
       navAnchors.forEach((anchor) => {
         anchor.addEventListener("click", (event) => {
