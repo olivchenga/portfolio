@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Редизайн раздела развлечения в почте — Portfolio</title>
+    <title>Интеграция автозагрузки файлов в почту — Portfolio</title>
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="../../case.css" />
     <noscript><style>.portfolio, .portfolio img { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
-    <main class="portfolio case-page">
+    <main class="portfolio case-page case-page--autoload">
       <div class="portfolio__container">
         <aside class="case-sidebar" aria-label="Навигация по кейсу">
           <div class="case-sidebar__bar">
             <div class="case-sidebar__header">
               <a class="case-back" href="../../index.html">
-                <img class="case-back__icon" src="../../assets/cases/entertainment/chevron-back.svg" alt="" width="20" height="20" />
+                <img class="case-back__icon" src="../../assets/cases/autoload/chevron-back.svg" alt="" width="20" height="20" />
                 Назад
               </a>
               <button class="case-burger" type="button" aria-expanded="false" aria-controls="case-nav" aria-label="Разделы кейса">
@@ -26,39 +26,39 @@
             </div>
             <nav class="case-nav" id="case-nav">
               <a class="case-nav__link" href="#context" data-scroll-target="context">
-                <img class="case-nav__marker" src="../../assets/cases/entertainment/nav-marker.svg" alt="" width="7" height="11" />
+                <img class="case-nav__marker" src="../../assets/cases/autoload/nav-marker.svg" alt="" width="7" height="11" />
                 Контекст и задача
               </a>
               <a class="case-nav__link" href="#process" data-scroll-target="process">
-                <img class="case-nav__marker" src="../../assets/cases/entertainment/nav-marker.svg" alt="" width="7" height="11" />
+                <img class="case-nav__marker" src="../../assets/cases/autoload/nav-marker.svg" alt="" width="7" height="11" />
                 Процесс
               </a>
               <a class="case-nav__link" href="#results" data-scroll-target="results">
-                <img class="case-nav__marker" src="../../assets/cases/entertainment/nav-marker.svg" alt="" width="7" height="11" />
+                <img class="case-nav__marker" src="../../assets/cases/autoload/nav-marker.svg" alt="" width="7" height="11" />
                 Результат
               </a>
               <a class="case-nav__link" href="#role" data-scroll-target="role">
-                <img class="case-nav__marker" src="../../assets/cases/entertainment/nav-marker.svg" alt="" width="7" height="11" />
+                <img class="case-nav__marker" src="../../assets/cases/autoload/nav-marker.svg" alt="" width="7" height="11" />
                 Моя роль
               </a>
             </nav>
           </div>
         </aside>
 
-        <section class="content case-content" aria-label="Кейс: редизайн раздела развлечения в почте">
+        <section class="content case-content" aria-label="Кейс: интеграция автозагрузки файлов в почту">
           <div class="case-block">
             <div class="case-hero-media" aria-hidden="true">
               <div class="case-hero-media__bg"></div>
-              <img class="case-hero-media__img" src="../../assets/cases/entertainment/Header@1x.png" srcset="../../assets/cases/entertainment/Header@1x.png 1x, ../../assets/cases/entertainment/Header@2x.png 2x" alt="" loading="eager" decoding="async" />
+              <img class="case-hero-media__img" src="../../assets/cases/autoload/Header@1x.png" srcset="../../assets/cases/autoload/Header@1x.png 1x, ../../assets/cases/autoload/Header@2x.png 2x" alt="" loading="eager" decoding="async" />
             </div>
 
             <article class="case-panel case-panel--padded case-intro" id="context">
               <div class="case-intro__lead">
                 <h1 class="case-title">
-                  Как&nbsp;мы&nbsp;остановили отток&nbsp;редизайном раздела с&nbsp;билетами
+                  Как&nbsp;мы&nbsp;оживили вкладку Облака в&nbsp;почте через автозагрузку фото
                 </h1>
                 <div class="case-meta">
-                  <span>2026</span>
+                  <span>2024</span>
                   <span>/</span>
                   <span>mobile</span>
                 </div>
@@ -68,20 +68,20 @@
                   <h2 class="case-h2">Контекст</h2>
                   <div class="case-text">
                     <p>
-                      В&nbsp;Почте Mail существовал раздел «Билеты» — туда автоматически попадали все&nbsp;билеты пользователя на&nbsp;концерты, кино, выставки. Но&nbsp;раздел выглядел безлико, не&nbsp;вовлекал и&nbsp;не&nbsp;приносил выручки. При&nbsp;этом мы&nbsp;видели тревожный сигнал: пользователи начали оттекать из&nbsp;почты
+                      Вкладка Облако в&nbsp;супераппе Почты Mail c ограниченным функционалом работала, но&nbsp;при этом аудитория не&nbsp;росла. Дублировать полноценное приложение Облака внутри почты было невозможно технически и&nbsp;нецелесообразно стратегически
                     </p>
                   </div>
                 </div>
                 <div class="case-copy-block">
                   <h2 class="case-h2">Проблема</h2>
                   <p class="case-text">
-                    Карточки билетов неинформативны, возвращаться в&nbsp;раздел незачем, монетизации&nbsp;нет. А&nbsp;пользователи тем&nbsp;временем уходят
+                    Вкладка есть, но&nbsp;ценности&nbsp;нет. Пользователь заходит раз&nbsp;— и&nbsp;больше не&nbsp;возвращается
                   </p>
                 </div>
                 <div class="case-copy-block">
                   <h2 class="case-h2">Продуктовая цель</h2>
                   <p class="case-text">
-                    Превратить «Билеты» в&nbsp;полноценный раздел «Развлечения»&nbsp;— единый хаб&nbsp;для&nbsp;планирования досуга, тем самым поработать с&nbsp;оттоком и&nbsp;повысить частоту использования почты за&nbsp;счёт повышения ценности раздела
+                    Привязать пользователя к&nbsp;Облаку и&nbsp;подвести к&nbsp;покупке подписки&nbsp;— через&nbsp;интеграцию автозагрузки фото и&nbsp;видео в&nbsp;суперапп
                   </p>
                 </div>
               </div>
@@ -93,19 +93,22 @@
               <article class="case-panel case-panel--padded case-split__text">
                 <span class="case-tag">Discover &amp; define</span>
                 <div class="case-copy-block">
-                  <h2 class="case-h2">Почему именно этот раздел</h2>
+                  <h2 class="case-h2">Почему автозагрузка</h2>
                   <div class="case-text">
                     <p>
-                      Выбор был&nbsp;обоснован данными: большое исследование концепций разных разделов почты показало, что&nbsp;идея единого хаба развлечений вошла в&nbsp;топ&nbsp;по&nbsp;востребованности у&nbsp;пользователей почты. 
-                    </p>
-                    <p>
-                      Также&nbsp;мы&nbsp;знали из&nbsp;исследований, что&nbsp;около&nbsp;половины пользователей активно используют почту в&nbsp;сценариях вокруг мероприятий&nbsp;— когда нужно найти билет, проверить его, показать на&nbsp;входе
+                      В&nbsp;отдельном приложении Облака автозагрузка фото и&nbsp;видео уже&nbsp;была доказанным драйвером вовлечённости: пользователи, которые её&nbsp;включали, возвращались заметно чаще. У&nbsp;неё&nbsp;был готовый SDK&nbsp;— интегрировать в&nbsp;почту можно было относительно быстро
                     </p>
                   </div>
                 </div>
+                <div class="case-copy-block">
+                  <h2 class="case-h2">Краевые состояния</h2>
+                  <p class="case-text">
+                    За&nbsp;простой функцией скрывался разветвлённый флоу: пауза без&nbsp;Wi-Fi, ошибка при&nbsp;файлах больше 2&nbsp;ГБ, два&nbsp;сценария при&nbsp;заполненном хранилище&nbsp;— в&nbsp;зависимости от&nbsp;того, брал&nbsp;ли&nbsp;пользователь триал раньше. Каждая ветка&nbsp;— отдельный экран и&nbsp;отдельная коммуникация
+                  </p>
+                </div>
               </article>
               <div class="case-media-panel" aria-hidden="true">
-                <img class="case-media-panel__img" src="../../assets/cases/entertainment/stats@1x.png" srcset="../../assets/cases/entertainment/stats@1x.png 1x, ../../assets/cases/entertainment/stats@2x.png 2x" alt="" loading="lazy" decoding="async" />
+                <img class="case-media-panel__img" src="../../assets/cases/autoload/flow@1x.png" srcset="../../assets/cases/autoload/flow@1x.png 1x, ../../assets/cases/autoload/flow@2x.png 2x" alt="" loading="lazy" decoding="async" />
               </div>
             </div>
 
@@ -113,34 +116,33 @@
               <article class="case-panel case-panel--padded case-split__text">
                 <span class="case-tag">Develop</span>
                 <div class="case-copy-block">
-                  <h2 class="case-h2">Что вошло в MVP</h2>
+                  <h2 class="case-h2">Гипотезы и фокус MVP</h2>
                   <div class="case-text">
-                    <p>Идей было много&nbsp;— отбирали по&nbsp;двум критериям: важность для&nbsp;пользователя и&nbsp;сложность разработки. В&nbsp;итоге в MVP вошли три&nbsp;составляющих:</p>
+                    <p>На основе предыдущих исследований автозагрузки сформулировали две ключевые гипотезы:</p>
                   </div>
                   <ul class="case-list">
                     <li class="case-list__item">
-                      <img class="case-list__bullet" src="../../assets/cases/entertainment/bullet.svg" alt="" width="7" height="17" />
-                      <span class="case-text">Редизайн карточек билетов&nbsp;— сделали их&nbsp;информативными и&nbsp;эмоциональными</span>
+                      <img class="case-list__bullet" src="../../assets/cases/autoload/bullet.svg" alt="" width="7" height="17" />
+                      <span class="case-text">Простой CTA для&nbsp;включения автозагрузки прямо во&nbsp;вкладке поможет пользователям понять ценность функции&nbsp;— и&nbsp;включить её</span>
                     </li>
                     <li class="case-list__item">
-                      <img class="case-list__bullet" src="../../assets/cases/entertainment/bullet.svg" alt="" width="7" height="17" />
-                      <span class="case-text">Лента рекомендаций мероприятий&nbsp;— CPA-интеграция с&nbsp;партнёром, новый источник выручки</span>
-                    </li>
-                    <li class="case-list__item">
-                      <img class="case-list__bullet" src="../../assets/cases/entertainment/bullet.svg" alt="" width="7" height="17" />
-                      <span class="case-text">Оплата развлекательных сервисов&nbsp;— уже&nbsp;существующая точка входа, мы обновили её и&nbsp;перенесли в&nbsp;раздел</span>
+                      <img class="case-list__bullet" src="../../assets/cases/autoload/bullet.svg" alt="" width="7" height="17" />
+                      <span class="case-text">Прозрачный статус автозагрузки повысит доверие и&nbsp;удержит пользователя в&nbsp;сервисе</span>
                     </li>
                   </ul>
+                  <p class="case-text">
+                    Мы&nbsp;сознательно отказались от&nbsp;сложных настроек и&nbsp;кастомизации на&nbsp;старте&nbsp;— сфокусировались на&nbsp;быстром включении и&nbsp;прозрачности состояний
+                  </p>
                 </div>
                 <div class="case-copy-block">
                   <h2 class="case-h2">Проверка гипотез</h2>
                   <p class="case-text">
-                    Интерфейс MVP я&nbsp;проверила на&nbsp;юзабилити-тесте сама. Все&nbsp;респонденты справились с&nbsp;заданиями без&nbsp;затруднений, и мы получили зелёный свет на&nbsp;запуск
+                    Юзабилити-тест показал, что&nbsp;блок автозагрузки понятен всем, триал подключается без&nbsp;затруднений. Мы&nbsp;немного доработали механику паузы и&nbsp;коммуникацию об&nbsp;ошибке заполнения хранилища&nbsp;— она&nbsp;вызывала негатив, несмотря на&nbsp;понятность текста
                   </p>
                 </div>
               </article>
               <div class="case-media-panel" aria-hidden="true">
-                <img class="case-media-panel__img" src="../../assets/cases/entertainment/IMG_2@1x.png" srcset="../../assets/cases/entertainment/IMG_2@1x.png 1x, ../../assets/cases/entertainment/IMG_2@2x.png 2x" alt="" loading="lazy" decoding="async" />
+                <img class="case-media-panel__img" src="../../assets/cases/autoload/IMG_2@1x.png" srcset="../../assets/cases/autoload/IMG_2@1x.png 1x, ../../assets/cases/autoload/IMG_2@2x.png 2x" alt="" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -150,21 +152,25 @@
               <span class="case-tag">Deliver</span>
               <h2 class="case-h2">Результаты</h2>
               <p class="case-text">
-                Отток удалось остановить — метрики растут от&nbsp;месяца к&nbsp;месяцу. Раздел продолжает развиваться: в&nbsp;планах офлайн-доступ к&nbsp;билетам, QR-код прямо в&nbsp;карточке, возможность поделиться билетом и&nbsp;другое
+                Интеграция автозагрузки превратила вкладку из&nbsp;вспомогательного раздела в&nbsp;сервис с&nbsp;понятной ценностью и&nbsp;поводом возвращаться
               </p>
-              <div class="case-metrics case-metrics--duo">
+              <div class="case-metrics case-metrics--trio">
                 <div class="case-metric">
-                  <p class="case-metric__value">+14%</p>
-                  <p class="case-metric__label">MAU раздела</p>
+                  <p class="case-metric__value">+9%</p>
+                  <p class="case-metric__label">Запуски приложения</p>
                 </div>
                 <div class="case-metric">
-                  <p class="case-metric__value">+1,7 п.п.</p>
-                  <p class="case-metric__label">Retention 1m</p>
+                  <p class="case-metric__value">+5%</p>
+                  <p class="case-metric__label">Рекламный ARPU</p>
+                </div>
+                <div class="case-metric">
+                  <p class="case-metric__value">+2,5 п.п.</p>
+                  <p class="case-metric__label">Retention 1d</p>
                 </div>
               </div>
             </article>
             <div class="case-media-panel" aria-hidden="true">
-              <img class="case-media-panel__img" src="../../assets/cases/entertainment/screens@1x.png" srcset="../../assets/cases/entertainment/screens@1x.png 1x, ../../assets/cases/entertainment/screens@2x.png 2x" alt="" loading="lazy" decoding="async" />
+              <img class="case-media-panel__img" src="../../assets/cases/autoload/screens@1x.png" srcset="../../assets/cases/autoload/screens@1x.png 1x, ../../assets/cases/autoload/screens@2x.png 2x" alt="" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -172,10 +178,7 @@
             <h2 class="case-h2">Моя роль</h2>
             <div class="case-text">
               <p>
-                В&nbsp;проекте я&nbsp;выступала продуктовым дизайнером в&nbsp;команде с&nbsp;продакт-менеджером. Вместе мы&nbsp;формулировали продуктовые гипотезы.
-              </p>
-              <p>
-                Я&nbsp;отвечала за&nbsp;весь дизайн&nbsp;— от&nbsp;идеи до&nbsp;дизайн-ревью на&nbsp;проде, грумила решения с&nbsp;разработчиками, следила за&nbsp;аналитикой. Также в&nbsp;этом проекте я сформулировала интерфейсные гипотезы и&nbsp;провела UX-исследование макетов
+                Продуктовый дизайнер в discovery-команде: руководитель продуктового направления, дизайнер, UX-редактор, UX-исследователь. Отвечала за гипотезы роста метрик, технические ограничения, пользовательский путь, корнер-кейсы и дизайн интеграции
               </p>
             </div>
           </article>

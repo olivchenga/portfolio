@@ -313,14 +313,22 @@ figure {
   line-height: 0;
 }
 
-.case-split .case-media-panel {
-  align-self: start;
-}
-
 .case-media-panel__img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+@media (min-width: 1281px) {
+  .case-split .case-media-panel {
+    height: 100%;
+  }
+
+  .case-split .case-media-panel__img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 .case-quotes {
@@ -554,6 +562,24 @@ figure {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.case-metrics--trio {
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-page--autoload .case-hero-media {
+  background: #c3cf8c;
+}
+
+.case-page--autoload .case-hero-media__bg {
+  background: #c3cf8c;
+  box-shadow: none;
+}
+
+.case-page--autoload .case-media-panel {
+  background: #f3f3f3;
+}
+
 .case-metric {
   display: flex;
   flex-direction: column;
@@ -614,6 +640,10 @@ figure {
 
   .case-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-metrics--trio {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .case-metric {
