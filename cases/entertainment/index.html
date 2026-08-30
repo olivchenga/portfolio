@@ -145,7 +145,9 @@
                 </div>
               </article>
               <div class="case-media-panel case-media-panel--ticket" aria-hidden="true">
-                <img class="case-media-panel__img" src="../../assets/cases/entertainment/IMG_2.png" srcset="../../assets/cases/entertainment/IMG_2.png 1x, ../../assets/cases/entertainment/IMG_2@2x.png 2x" alt="" loading="lazy" decoding="async" />
+                <video class="case-media-panel__video" autoplay muted loop playsinline preload="metadata">
+                  <source src="../../assets/cases/entertainment/ticket-card.webm" type="video/webm" />
+                </video>
               </div>
             </div>
           </div>
@@ -193,7 +195,7 @@
             <div class="footer__contacts">
               <a class="menu__button menu__button--secondary" href="mailto:olivchenga@gmail.com" target="_blank" rel="noopener noreferrer">olivchenga@gmail.com</a>
               <a class="menu__button menu__button--secondary" href="https://t.me/olya_sick" target="_blank" rel="noopener noreferrer">Telegram</a>
-              <a class="menu__button menu__button--secondary" href="#" target="_blank" rel="noopener noreferrer">VK</a>
+              <a class="menu__button menu__button--secondary" href="https://vk.ru/p97043k" target="_blank" rel="noopener noreferrer">VK</a>
             </div>
           </footer>
         </section>
@@ -204,6 +206,13 @@
       const navAnchors = document.querySelectorAll("[data-scroll-target]");
       let smoothTargetScrollTop = 0;
       let smoothAnimationFrame = null;
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.querySelectorAll(".case-media-panel__video").forEach((video) => {
+          video.removeAttribute("autoplay");
+          video.pause();
+        });
+      }
 
       const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 

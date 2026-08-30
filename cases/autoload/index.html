@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Интеграция автозагрузки файлов в почту — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="../../case.css" />
     <script>document.documentElement.classList.add("with-reveal");</script>
@@ -56,7 +59,9 @@
             <article class="case-panel case-panel--padded case-intro" id="context">
               <div class="case-intro__lead">
                 <h1 class="case-title">
-                  Как&nbsp;мы&nbsp;оживили вкладку Облака в&nbsp;почте через автозагрузку фото
+                  Как&nbsp;мы&nbsp;оживили вкладку Облака в&nbsp;почте через
+                  <span class="case-title__mark">автозагрузку<img class="case-title__underline" src="../../assets/cases/autoload/title-underline.svg" alt="" width="222" height="15" /></span>
+                  фото
                 </h1>
                 <div class="case-meta">
                   <span>2024</span>
@@ -143,7 +148,9 @@
                 </div>
               </article>
               <div class="case-media-panel" aria-hidden="true">
-                <img class="case-media-panel__img" src="../../assets/cases/autoload/IMG_2@1x.png" srcset="../../assets/cases/autoload/IMG_2@1x.png 1x, ../../assets/cases/autoload/IMG_2@2x.png 2x" alt="" loading="lazy" decoding="async" />
+                <video class="case-media-panel__video" autoplay muted loop playsinline preload="metadata">
+                  <source src="../../assets/cases/autoload/autoupload.webm" type="video/webm" />
+                </video>
               </div>
             </div>
           </div>
@@ -165,7 +172,7 @@
                   <p class="case-metric__label">Рекламный ARPU</p>
                 </div>
                 <div class="case-metric">
-                  <p class="case-metric__value">+2,5 п.п.</p>
+                  <p class="case-metric__value">+2,5 <span class="case-metric__unit">п.п.</span></p>
                   <p class="case-metric__label">Retention 1d</p>
                 </div>
               </div>
@@ -188,11 +195,11 @@
             <p class="footer__text">
               Открыта к новым проектам
             </p>
-            <img class="footer__arrow" src="../../assets/ui/footer-arrow.svg" alt="" width="52" height="71" />
+            <img class="footer__arrow" src="../../assets/cases/autoload/footer-arrow.svg" alt="" width="52" height="71" />
             <div class="footer__contacts">
               <a class="menu__button menu__button--secondary" href="mailto:olivchenga@gmail.com" target="_blank" rel="noopener noreferrer">olivchenga@gmail.com</a>
               <a class="menu__button menu__button--secondary" href="https://t.me/olya_sick" target="_blank" rel="noopener noreferrer">Telegram</a>
-              <a class="menu__button menu__button--secondary" href="#" target="_blank" rel="noopener noreferrer">VK</a>
+              <a class="menu__button menu__button--secondary" href="https://vk.ru/p97043k" target="_blank" rel="noopener noreferrer">VK</a>
             </div>
           </footer>
         </section>
@@ -203,6 +210,13 @@
       const navAnchors = document.querySelectorAll("[data-scroll-target]");
       let smoothTargetScrollTop = 0;
       let smoothAnimationFrame = null;
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.querySelectorAll(".case-media-panel__video").forEach((video) => {
+          video.removeAttribute("autoplay");
+          video.pause();
+        });
+      }
 
       const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -358,7 +372,7 @@
             });
 
       const revealImageSelector =
-        ".portfolio img:not(.case-hero-media__img):not(.case-media-panel__img):not(.case-carousel__control-icon)";
+        ".portfolio img:not(.case-hero-media__img):not(.case-media-panel__img):not(.case-carousel__control-icon):not(.case-title__underline)";
 
       document.querySelectorAll(revealImageSelector).forEach((img) => {
         const markLoaded = () => img.classList.add("is-loaded");

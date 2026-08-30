@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Интеграция сервиса кешбэка в почту — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="../../case.css" />
     <script>document.documentElement.classList.add("with-reveal");</script>
     <noscript><style>.portfolio, .portfolio img { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
-    <main class="portfolio case-page">
+    <main class="portfolio case-page case-page--cashback">
       <div class="portfolio__container">
         <aside class="case-sidebar" aria-label="Навигация по кейсу">
           <div class="case-sidebar__bar">
@@ -56,7 +59,8 @@
             <article class="case-panel case-panel--padded case-intro" id="context">
               <div class="case-intro__lead">
                 <h1 class="case-title">
-                  Как мы превратили 30&nbsp;млн чеков на&nbsp;почте в&nbsp;источник выручки
+                  Как&nbsp;мы&nbsp;превратили 30&nbsp;млн&nbsp;чеков на&nbsp;почте в&nbsp;источник
+                  <span class="case-title__mark"> выручки<img class="case-title__underline" src="../../assets/cases/cashback/title-underline.svg" alt="" width="197" height="12" /></span>
                 </h1>
                 <div class="case-meta">
                   <span>2025</span>
@@ -115,7 +119,9 @@
                 </div>
               </article>
               <div class="case-media-panel" aria-hidden="true">
-                <img class="case-media-panel__img" src="../../assets/cases/cashback/IMG_2.png" srcset="../../assets/cases/cashback/IMG_2.png 1x, ../../assets/cases/cashback/IMG_2@2x.png 2x" alt="" loading="lazy" decoding="async" />
+                <video class="case-media-panel__video" autoplay muted loop playsinline preload="metadata">
+                  <source src="../../assets/cases/cashback/cashback-cards.webm" type="video/webm" />
+                </video>
               </div>
             </div>
 
@@ -297,11 +303,11 @@
             <p class="footer__text">
               Открыта к новым проектам
             </p>
-            <img class="footer__arrow" src="../../assets/ui/footer-arrow.svg" alt="" width="52" height="71" />
+            <img class="footer__arrow" src="../../assets/cases/cashback/footer-arrow.svg" alt="" width="52" height="71" />
             <div class="footer__contacts">
               <a class="menu__button menu__button--secondary" href="mailto:olivchenga@gmail.com" target="_blank" rel="noopener noreferrer">olivchenga@gmail.com</a>
               <a class="menu__button menu__button--secondary" href="https://t.me/olya_sick" target="_blank" rel="noopener noreferrer">Telegram</a>
-              <a class="menu__button menu__button--secondary" href="#" target="_blank" rel="noopener noreferrer">VK</a>
+              <a class="menu__button menu__button--secondary" href="https://vk.ru/p97043k" target="_blank" rel="noopener noreferrer">VK</a>
             </div>
           </footer>
         </section>
@@ -312,6 +318,13 @@
       const navAnchors = document.querySelectorAll("[data-scroll-target]");
       let smoothTargetScrollTop = 0;
       let smoothAnimationFrame = null;
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.querySelectorAll(".case-media-panel__video").forEach((video) => {
+          video.removeAttribute("autoplay");
+          video.pause();
+        });
+      }
 
       const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -467,7 +480,7 @@
             });
 
       const revealImageSelector =
-        ".portfolio img:not(.case-hero-media__img):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon)";
+        ".portfolio img:not(.case-hero-media__img):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon):not(.case-title__underline)";
 
       document.querySelectorAll(revealImageSelector).forEach((img) => {
         const markLoaded = () => img.classList.add("is-loaded");

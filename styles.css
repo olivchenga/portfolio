@@ -277,6 +277,7 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
 
 .card__media {
   display: block;
+  position: relative;
   width: 100%;
   height: var(--card-media-height);
   border-radius: var(--radius-card);
@@ -289,12 +290,38 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
   height: calc(var(--card-media-height) * 2 + var(--cards-column-gap) + var(--card-text-block-height));
 }
 
+.card__media--layered {
+  background: #3a1458;
+}
+
+.card__media--layered picture {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  transform: translateY(0) scale(1);
+  transition: transform 300ms ease-in-out;
+}
+
 .card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
+  position: relative;
+  z-index: 1;
   transform: translateY(0) scale(1);
   transition: transform 300ms ease-in-out;
 }
@@ -315,6 +342,8 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
 .card__title {
   margin: 0;
   padding-left: 4px;
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 100;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.02em;
@@ -323,7 +352,9 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
 }
 
 .card__media:hover .card__image,
-.card--link:hover .card__image {
+.card--link:hover .card__image,
+.card__media:hover .card__video,
+.card--link:hover .card__video {
   transform: translateY(-1px) scale(1.04);
 }
 
@@ -516,6 +547,8 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
   display: inline-flex;
   align-items: center;
   color: var(--color-text-contrast);
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 100;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.02em;
@@ -909,5 +942,18 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .card__video,
+  .card__image {
+    transform: none;
+    transition: none;
+  }
+
+  .card__media:hover .card__image,
+  .card--link:hover .card__image,
+  .card__media:hover .card__video,
+  .card--link:hover .card__video {
+    transform: none;
   }
 }

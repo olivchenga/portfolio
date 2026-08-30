@@ -34,8 +34,8 @@
       rel="preload"
       as="image"
       type="image/webp"
-      href="./assets/cards/card-4@1x.webp"
-      imagesrcset="./assets/cards/card-4@2x.webp 2x"
+      href="./assets/cards/card-4-phone@1x.webp"
+      imagesrcset="./assets/cards/card-4-phone@2x.webp 2x"
       imagesizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)"
       media="(min-width: 769px)"
     />
@@ -95,34 +95,39 @@
                 <h2 class="card__title">Интеграция автозагрузки файлов в почту</h2>
               </a>
 
-              <article class="card">
+              <a class="card card--link" href="./cases/special/index.html">
                 <picture class="card__media">
                   <source type="image/webp" srcset="./assets/cards/card-3@1x.webp 1x, ./assets/cards/card-3@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
                   <img class="card__image" src="./assets/cards/card-3@1x.png" srcset="./assets/cards/card-3@1x.png 1x, ./assets/cards/card-3@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Спецпроект с кешбэком за чеки в почте" loading="lazy" decoding="async" />
                 </picture>
                 <div class="card__meta">2025&nbsp; /&nbsp; mobile</div>
                 <h2 class="card__title">Спецпроект с кешбэком за чеки в почте</h2>
-              </article>
+              </a>
             </div>
 
             <div class="projects__col">
               <a class="card card--link card--tall" href="./cases/entertainment/index.html">
-                <picture class="card__media card__media--tall">
-                  <source type="image/webp" srcset="./assets/cards/card-4@1x.webp 1x, ./assets/cards/card-4@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
-                  <img class="card__image card__image--tall" src="./assets/cards/card-4@1x.png" srcset="./assets/cards/card-4@1x.png 1x, ./assets/cards/card-4@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Редизайн раздела развлечения в почте" loading="lazy" decoding="async" />
-                </picture>
+                <div class="card__media card__media--tall card__media--layered">
+                  <video class="card__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                    <source src="./assets/cards/card-4.mp4" type="video/mp4" />
+                  </video>
+                  <picture>
+                    <source type="image/webp" srcset="./assets/cards/card-4-phone@1x.webp 1x, ./assets/cards/card-4-phone@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
+                    <img class="card__image card__image--tall" src="./assets/cards/card-4-phone@1x.png" srcset="./assets/cards/card-4-phone@1x.png 1x, ./assets/cards/card-4-phone@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Редизайн раздела развлечения в почте" loading="lazy" decoding="async" />
+                  </picture>
+                </div>
                 <div class="card__meta">2026&nbsp; /&nbsp; mobile</div>
                 <h2 class="card__title">Редизайн раздела развлечения в почте</h2>
               </a>
 
-              <article class="card">
+              <a class="card card--link" href="./cases/cleanup/index.html">
                 <picture class="card__media">
                   <source type="image/webp" srcset="./assets/cards/card-5@1x.webp 1x, ./assets/cards/card-5@2x.webp 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" />
                   <img class="card__image" src="./assets/cards/card-5@1x.png" srcset="./assets/cards/card-5@1x.png 1x, ./assets/cards/card-5@2x.png 2x" sizes="(min-width: 1281px) 420px, (min-width: 769px) 45vw, calc(100vw - 32px)" alt="Очистка места на телефоне" loading="lazy" decoding="async" />
                 </picture>
-                <div class="card__meta">2024&nbsp; /&nbsp; mobile</div>
+                <div class="card__meta">2025&nbsp; /&nbsp; mobile</div>
                 <h2 class="card__title">Очистка места на телефоне</h2>
-              </article>
+              </a>
             </div>
           </div>
 
@@ -152,7 +157,7 @@
             <div class="footer__contacts">
               <a class="menu__button menu__button--secondary" href="mailto:olivchenga@gmail.com" target="_blank" rel="noopener noreferrer">olivchenga@gmail.com</a>
               <a class="menu__button menu__button--secondary" href="https://t.me/olya_sick" target="_blank" rel="noopener noreferrer">Telegram</a>
-              <a class="menu__button menu__button--secondary" href="#" target="_blank" rel="noopener noreferrer">VK</a>
+              <a class="menu__button menu__button--secondary" href="https://vk.ru/p97043k" target="_blank" rel="noopener noreferrer">VK</a>
             </div>
           </footer>
         </section>
@@ -176,6 +181,13 @@
       const navAnchors = document.querySelectorAll("[data-scroll-target]");
       let smoothTargetScrollTop = 0;
       let smoothAnimationFrame = null;
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.querySelectorAll(".card__video").forEach((video) => {
+          video.removeAttribute("autoplay");
+          video.pause();
+        });
+      }
 
       const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
