@@ -131,7 +131,7 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
   transition-delay: 40ms;
 }
 
-.portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow):not(.case-back__icon):not(.case-nav__marker):not(.case-list__bullet):not(.case-hero-media__img):not(.case-hero-lottie__layer):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon):not(.case-title__underline) {
+.portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow):not(.case-back__icon):not(.board-back__icon):not(.board-hint__icon):not(.case-nav__marker):not(.case-list__bullet):not(.case-hero-media__img):not(.case-hero-lottie__layer):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon):not(.case-title__underline):not(.board-item__img) {
   opacity: 0;
   transform: translateY(-10px);
   transition:
@@ -139,7 +139,7 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
     transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow):not(.case-back__icon):not(.case-nav__marker):not(.case-list__bullet):not(.case-hero-media__img):not(.case-hero-lottie__layer):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon):not(.case-title__underline).is-loaded {
+.portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow):not(.case-back__icon):not(.board-back__icon):not(.board-hint__icon):not(.case-nav__marker):not(.case-list__bullet):not(.case-hero-media__img):not(.case-hero-lottie__layer):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon):not(.case-title__underline):not(.board-item__img).is-loaded {
   opacity: 1;
   transform: translateY(0);
 }
@@ -213,14 +213,50 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
   object-position: bottom;
 }
 
-.profile__name-badge {
+.profile__name {
   position: absolute;
-  left: 61px;
+  left: 58px;
   top: 51px;
-  width: 111px;
+  width: 138px;
+  z-index: 3;
+}
+
+.profile__name-badge {
+  width: 138px;
   height: auto;
   display: block;
+}
+
+.profile__name-hint {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 6px);
+  transform: translateX(-50%) translateY(2px);
+  opacity: 0;
   pointer-events: none;
+  white-space: nowrap;
+  padding: 8px 10px;
+  border-radius: 32px;
+  background: var(--color-bg);
+  box-shadow: 0 4px 12px rgba(30, 30, 30, 0.10);
+  border: 1px solid rgba(30, 30, 30, 0.10);
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 100;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+@media (hover: hover) {
+  .profile__name:hover .profile__name-hint {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .profile__about {
@@ -389,6 +425,9 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
 }
 
 .playground {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
   position: relative;
   width: 100%;
@@ -954,7 +993,7 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
 
 @media (prefers-reduced-motion: reduce) {
   .portfolio,
-  .portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow):not(.case-back__icon):not(.case-nav__marker):not(.case-list__bullet):not(.case-hero-media__img):not(.case-hero-lottie__layer):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon):not(.case-title__underline),
+  .portfolio img:not(.card__image):not(.playground__img):not(.menu__chevron):not(.playground__chevron):not(.footer__arrow):not(.case-back__icon):not(.board-back__icon):not(.board-hint__icon):not(.case-nav__marker):not(.case-list__bullet):not(.case-hero-media__img):not(.case-hero-lottie__layer):not(.case-media-panel__img):not(.case-carousel__media):not(.case-carousel__control-icon):not(.case-title__underline):not(.board-item__img),
   html.with-reveal :is(
     .case-hero-media,
     .case-panel,
@@ -972,6 +1011,10 @@ html.with-reveal .case-split > .case-media-panel.is-inview {
   .card__video,
   .card__image {
     transform: none;
+    transition: none;
+  }
+
+  .profile__name-hint {
     transition: none;
   }
 

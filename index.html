@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Оля Толмачева — портфолио</title>
+    <link rel="icon" href="./assets/ui/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/ui/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="./assets/ui/apple-touch-icon.png" />
     <link rel="stylesheet" href="./styles.css" />
     <link
       rel="preload"
@@ -15,7 +18,6 @@
     <link
       rel="preload"
       as="image"
-      type="image/webp"
       href="./assets/ui/name-badge@1x.png"
       imagesrcset="./assets/ui/name-badge@2x.png 2x, ./assets/ui/name-badge@3x.png 3x"
     />
@@ -51,7 +53,10 @@
                   <img class="profile__avatar" src="./assets/avatar/avatar@1x.png" srcset="./assets/avatar/avatar@2x.png 2x" alt="аватар Оли Ивченко" decoding="async" fetchpriority="high" />
                 </picture>
               </div>
-              <img class="profile__name-badge" src="./assets/ui/name-badge@1x.png" srcset="./assets/ui/name-badge@2x.png 2x, ./assets/ui/name-badge@3x.png 3x" alt="оля ивченко" width="111" height="41" decoding="async" fetchpriority="high" />
+              <div class="profile__name">
+                <img class="profile__name-badge" src="./assets/ui/name-badge@1x.png" srcset="./assets/ui/name-badge@2x.png 2x, ./assets/ui/name-badge@3x.png 3x" alt="оля толмачева (Ивченко)" width="138" height="41" decoding="async" fetchpriority="high" />
+                <span class="profile__name-hint" aria-hidden="true">(Ивченко)</span>
+              </div>
             </div>
             <p class="profile__about">
               Привет! Я дизайнер, который проектирует и запускает b2c сервисы для миллионов пользователей. Здесь рассказываю как
@@ -63,7 +68,7 @@
             <nav class="menu" aria-label="Навигация">
               <a class="menu__button menu__button--nav" href="#projects" data-scroll-target="projects">Проекты</a>
               <a class="menu__button menu__button--nav" href="#contacts" data-scroll-target="contacts">Контакты</a>
-              <a class="menu__button menu__button--nav menu__button--resume" href="./assets/resume/CV Ивченко Ольга.pdf" download>
+              <a class="menu__button menu__button--nav menu__button--resume" href="./assets/resume/CV Толмачева Ольга.pdf" download>
                 Резюме
                 <img class="menu__chevron" src="./assets/ui/chevron.svg" alt="" width="20" height="20" />
               </a>
@@ -128,7 +133,7 @@
             </div>
           </div>
 
-          <section class="playground" aria-label="UI Playground">
+          <a class="playground" href="./playground/index.html" aria-label="Открыть UI playground">
             <picture class="playground__layer playground__layer--bg">
               <source type="image/webp" srcset="./assets/playground/playground-bg@1x.webp 1x, ./assets/playground/playground-bg@2x.webp 2x" />
               <img class="playground__img" src="./assets/playground/playground-bg@1x.png" srcset="./assets/playground/playground-bg@2x.png 2x" alt="" loading="lazy" decoding="async" />
@@ -139,11 +144,11 @@
             </picture>
             <div class="playground__blur">
               <span class="playground__tag">UI playground</span>
-              <button class="playground__button" type="button" aria-label="Открыть UI playground">
+              <span class="playground__button" aria-hidden="true">
                 <img class="playground__chevron" src="./assets/ui/chevron-playground.svg" alt="" width="20" height="20" />
-              </button>
+              </span>
             </div>
-          </section>
+          </a>
 
           <footer class="footer" id="contacts">
             <p class="footer__text">
@@ -166,7 +171,7 @@
       <div class="bottom-nav__bar menu">
         <a class="menu__button menu__button--nav" href="#projects" data-scroll-target="projects">Проекты</a>
         <a class="menu__button menu__button--nav" href="#contacts" data-scroll-target="contacts">Контакты</a>
-        <a class="menu__button menu__button--nav menu__button--resume" href="./assets/resume/CV Ивченко Ольга.pdf" download>
+        <a class="menu__button menu__button--nav menu__button--resume" href="./assets/resume/CV Толмачева Ольга.pdf" download>
           Резюме
           <img class="menu__chevron" src="./assets/ui/chevron.svg" alt="" width="20" height="20" />
         </a>
