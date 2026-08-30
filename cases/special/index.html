@@ -51,6 +51,18 @@
             <div class="case-hero-media" aria-hidden="true">
               <div class="case-hero-media__bg"></div>
               <img class="case-hero-media__img" src="../../assets/cases/special/Header@1x.png" srcset="../../assets/cases/special/Header@1x.png 1x, ../../assets/cases/special/Header@2x.png 2x" alt="" loading="eager" decoding="async" />
+              <div class="case-hero-media__lottie">
+                <div class="case-hero-lottie__stage">
+                  <div class="case-hero-lottie__inner">
+                    <img class="case-hero-lottie__layer" data-lottie-layer="rays" src="../../assets/cases/special/lottie/rays.png" width="775" height="777" alt="" />
+                    <img class="case-hero-lottie__layer" data-lottie-layer="ticket3" src="../../assets/cases/special/lottie/ticket3.png" width="794" height="598" alt="" />
+                    <img class="case-hero-lottie__layer" data-lottie-layer="ticket2" src="../../assets/cases/special/lottie/ticket2.png" width="750" height="592" alt="" />
+                    <img class="case-hero-lottie__layer" data-lottie-layer="ticket1" src="../../assets/cases/special/lottie/ticket1.png" width="750" height="560" alt="" />
+                    <img class="case-hero-lottie__layer" data-lottie-layer="coin2" src="../../assets/cases/special/lottie/coin2.png" width="750" height="560" alt="" />
+                    <img class="case-hero-lottie__layer" data-lottie-layer="coin1" src="../../assets/cases/special/lottie/coin1.png" width="750" height="560" alt="" />
+                  </div>
+                </div>
+              </div>
             </div>
 
             <article class="case-panel case-panel--padded case-intro" id="context">
@@ -191,6 +203,7 @@
         </section>
       </div>
     </main>
+    <script src="../../assets/js/special-hero-lottie.js"></script>
     <script>
       const content = document.querySelector(".content");
       const navAnchors = document.querySelectorAll("[data-scroll-target]");
@@ -358,7 +371,7 @@
             });
 
       const revealImageSelector =
-        ".portfolio img:not(.case-hero-media__img):not(.case-media-panel__img):not(.case-carousel__control-icon):not(.case-title__underline)";
+        ".portfolio img:not(.case-hero-media__img):not(.case-hero-lottie__layer):not(.case-media-panel__img):not(.case-carousel__control-icon):not(.case-title__underline)";
 
       document.querySelectorAll(revealImageSelector).forEach((img) => {
         const markLoaded = () => img.classList.add("is-loaded");

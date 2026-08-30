@@ -198,6 +198,49 @@ figure {
   height: auto;
 }
 
+.case-hero-media__lottie {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.case-hero-lottie__stage {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  aspect-ratio: 750 / 684;
+  container-type: inline-size;
+}
+
+.case-page--special .case-hero-lottie__stage {
+  left: 5.2%;
+  top: 27.5%;
+  bottom: auto;
+  width: 26.75%;
+  height: 88.5%;
+  aspect-ratio: auto;
+}
+
+.case-hero-lottie__inner {
+  width: 750px;
+  height: 684px;
+  transform: scale(calc(100cqw / 750));
+  transform-origin: top left;
+}
+
+.case-hero-lottie__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  width: auto;
+  height: auto;
+  opacity: 0;
+}
+
 .case-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
