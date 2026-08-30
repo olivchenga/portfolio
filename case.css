@@ -101,7 +101,7 @@ figure {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.02em;
-  font-weight: 450;
+  font-weight: 500;
   width: fit-content;
   transition: background-color 300ms ease-in-out;
 }
@@ -135,7 +135,7 @@ figure {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.02em;
-  font-weight: 450;
+  font-weight: 500;
 }
 
 .case-nav__link:hover {
@@ -277,7 +277,7 @@ figure {
   font-variation-settings: "wdth" 100;
   font-size: 16px;
   line-height: 20px;
-  font-weight: 450;
+  font-weight: 500;
   letter-spacing: -0.02em;
   width: fit-content;
 }
@@ -739,6 +739,7 @@ body:has(.case-page--entertainment) {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: inherit;
   pointer-events: none;
@@ -924,6 +925,7 @@ body:has(.case-page--entertainment) {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   border: 1px solid rgba(57, 1, 17, 0.1);
   border-radius: inherit;
   pointer-events: none;
