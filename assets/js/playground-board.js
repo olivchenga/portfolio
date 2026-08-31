@@ -13,20 +13,30 @@
   let imageZ = 10;
   let drag = null;
 
+  let didInteract = false;
+
   const applyPan = () => {
     canvas.style.transform = `translate(${panX}px, ${panY}px)`;
   };
 
   const centerTitle = () => {
     const anchor = title ?? canvas;
-    const midX = anchor.offsetLeft + anchor.offsetWidth / 2;
-    const midY = anchor.offsetTop + anchor.offsetHeight / 2;
-    panX = board.clientWidth / 2 - midX;
-    panY = board.clientHeight / 2 - midY;
+    panX = board.clientWidth / 2 - (anchor.offsetLeft + anchor.offsetWidth / 2);
+    panY = board.clientHeight / 2 - (anchor.offsetTop + anchor.offsetHeight / 2);
     applyPan();
   };
 
   centerTitle();
+  document.fonts?.ready.then(() => {
+    if (!didInteract) {
+      centerTitle();
+    }
+  });
+  window.addEventListener("resize", () => {
+    if (!didInteract) {
+      centerTitle();
+    }
+  });
 
   canvas.querySelectorAll("img").forEach((img) => {
     img.setAttribute("draggable", "false");
@@ -49,6 +59,7 @@
       item.style.zIndex = String(imageZ);
     }
     item.classList.add("is-dragging");
+    didInteract = true;
     drag = {
       type: "item",
       el: item,
@@ -74,6 +85,7 @@
     }
 
     event.preventDefault();
+    didInteract = true;
     board.setPointerCapture(event.pointerId);
     board.classList.add("is-panning");
     drag = {
@@ -130,6 +142,7 @@
       }
 
       event.preventDefault();
+      didInteract = true;
       panX -= event.deltaX;
       panY -= event.deltaY;
       applyPan();
