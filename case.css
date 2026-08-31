@@ -642,7 +642,7 @@ figure {
   inset: 0;
   z-index: 1;
   border: 1px solid rgba(55, 55, 55, 0.1);
-  border-radius: inherit;
+  border-radius: 8px;
   pointer-events: none;
 }
 
