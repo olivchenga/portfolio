@@ -54,3 +54,40 @@
 
   nodes.forEach((node) => observer.observe(node));
 })();
+
+(() => {
+  const footer = document.querySelector(".footer--next");
+  const title = footer?.querySelector(".footer__text");
+  const button = footer?.querySelector(".footer__next");
+
+  if (!footer || !title || !button) {
+    return;
+  }
+
+  const update = () => {
+    footer.classList.remove("is-stacked");
+
+    const styles = getComputedStyle(footer);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 16;
+    const padding =
+      Number.parseFloat(styles.paddingLeft) + Number.parseFloat(styles.paddingRight);
+    const available = footer.clientWidth - padding;
+    const needed = title.scrollWidth + button.offsetWidth + gap;
+
+    footer.classList.toggle("is-stacked", needed > available + 0.5);
+  };
+
+  const schedule = () => requestAnimationFrame(update);
+
+  if (typeof ResizeObserver === "function") {
+    new ResizeObserver(schedule).observe(footer);
+  } else {
+    window.addEventListener("resize", schedule);
+  }
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(schedule);
+  }
+
+  schedule();
+})();

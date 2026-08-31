@@ -682,6 +682,86 @@ figure {
   flex-shrink: 0;
 }
 
+.footer--next {
+  text-decoration: none;
+  cursor: pointer;
+  flex-wrap: wrap;
+  height: auto;
+  min-height: 84px;
+  align-content: center;
+  row-gap: 12px;
+}
+
+.footer--next .footer__text {
+  min-width: min-content;
+  white-space: nowrap;
+  height: auto;
+}
+
+.footer--next .footer__next {
+  margin-left: auto;
+}
+
+.footer.footer--next.is-stacked {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.footer.footer--next.is-stacked .footer__text {
+  min-width: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.footer.footer--next.is-stacked .footer__next {
+  margin-left: 0;
+}
+
+.footer--next:focus-visible {
+  outline: 2px solid var(--color-text-contrast);
+  outline-offset: 2px;
+}
+
+.footer__next {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 48px;
+  background: var(--color-dark-alpha);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 300ms ease-in-out;
+}
+
+.footer__next-chevron {
+  display: block;
+  width: 20px;
+  height: 20px;
+  transform: scaleX(-1);
+}
+
+.footer--next:hover .footer__next {
+  opacity: 0.7;
+}
+
+.footer__squiggle {
+  position: absolute;
+  right: 80px;
+  top: -4px;
+  z-index: 0;
+  width: 254px;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
 html:has(.case-page--entertainment),
 body:has(.case-page--entertainment) {
   background: #000;
@@ -1024,16 +1104,31 @@ body:has(.case-page--entertainment) {
   .case-quote__text {
     white-space: normal;
   }
-
-  .footer__arrow {
-    visibility: hidden;
-}
 }
 
 @media (max-width: 1120px) {
   .case-page.portfolio,
   .case-page.portfolio.is-visible {
     transform: none;
+  }
+
+  .footer.footer--next {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    text-align: left;
+    height: auto;
+    min-height: 84px;
+    gap: 12px 16px;
+  }
+
+  .footer--next .footer__text {
+    height: auto;
+    justify-content: flex-start;
+    text-align: left;
+    white-space: nowrap;
   }
 
   .case-page .case-content {
@@ -1154,6 +1249,26 @@ body:has(.case-page--entertainment) {
 @media (max-width: 768px) {
   .portfolio__container {
     grid-template-columns: 1fr;
+  }
+
+  .footer.footer--next {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    gap: 12px 16px;
+    padding: 20px 16px;
+  }
+
+  .footer--next .footer__text {
+    height: auto;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .footer__squiggle {
+    display: none;
   }
 
   .case-panel--padded {
